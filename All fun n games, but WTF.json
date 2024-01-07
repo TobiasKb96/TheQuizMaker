@@ -1,0 +1,122 @@
+[
+  {
+    "question":"What Album was not released in the 90's?",
+    "a1":"Blood Sugar Sex Magik",
+    "a2":"Nevermind",
+    "a3":"Die Bestie in Menschengestalt",
+    "a4":"Toxicity",
+    "correctAnswer":4
+  },
+  {
+    "question":"Which author did NOT write any Fantasy books?",
+    "a1":"J.R.R. Tolkien",
+    "a2":"P.D. James",
+    "a3":"George R.R. Martin",
+    "a4":"Stephen King",
+    "correctAnswer":2
+  },
+  {
+    "question":"What game did Korg play in Avenger's Endgame?",
+    "a1":"Fortnite",
+    "a2":"Resident Evil 4",
+    "a3":"Spiderman 2",
+    "a4":"Halo",
+    "correctAnswer":1
+  },
+  {
+    "question":"What song begins with it's title",
+    "a1":"Honky Tonk Woman - The Rolling stones",
+    "a2":"Come and get your Love - Redbone",
+    "a3":"Yesterday - The Beatles",
+    "a4":"Respect - Aretha Franklin",
+    "correctAnswer":3
+  },
+  {
+    "question":"Which of those games is a boardgame",
+    "a1":"Tarrock",
+    "a2":"Barbie",
+    "a3":"Exploding Kittens",
+    "a4":"5-Minute Mystery",
+    "correctAnswer":4
+  },
+  {
+    "question":"How many Guinness World Records does Taylor Swift as of 1.1.24",
+    "a1":"101",
+    "a2":"69",
+    "a3":"420",
+    "a4":"0",
+    "correctAnswer":1
+  },
+  {
+    "question":"Which director has won 2 'Best Director' Oscars",
+    "a1":"Quentin Tarantino",
+    "a2":"Clint Eastwood",
+    "a3":"John Ford",
+    "a4":"Michael Bay",
+    "correctAnswer":2
+  },
+  {
+    "question":"What color was Qui-Gon Jinn's lightsaber in Starwars",
+    "a1":"purple",
+    "a2":"blue",
+    "a3":"green",
+    "a4":"red",
+    "correctAnswer":3
+  },
+  {
+    "question":"What line does Michael Jackson NOT sing in 'Thriller'",
+    "a1":"... no one's gonna save you from the beast ...",
+    "a2":"... so let me hold you tight ...",
+    "a3":"... the enemy on the way ...",
+    "a4":"... realize there's nowhere left to turn ...",
+    "correctAnswer":3
+  },
+  {
+    "question":"What character does NOT belong to 'Assassins' Creed Mirage'?",
+    "a1":"Sova",
+    "a2":"Basim",
+    "a3":"Nehal",
+    "a4":"Roshan",
+    "correctAnswer":1
+  },
+  {
+    "question":"Which one is NOT a genre on Spotify",
+    "a1":"Glow",
+    "a2":"League of Legends",
+    "a3":"Slay",
+    "a4":"Podcast - Charts",
+    "correctAnswer":3
+  },
+  {
+    "question":"Which of the following is a pokemon and not a medication?",
+    "a1":"Zeldox",
+    "a2":"Vibrava",
+    "a3":"Decadron",
+    "a4":"Tygacil",
+    "correctAnswer":2
+  },
+  {
+    "question":"Thor's Mjolnir is made from the metal of ...?",
+    "a1":"A dying star",
+    "a2":"A dying stone",
+    "a3":"A dying planet",
+    "a4":"a stone in Asgard",
+    "correctAnswer":1
+  },
+  {
+    "question":"Who says 'You shall not pass' in the Lord of the rings?",
+    "a1":"Pipin",
+    "a2":"Gandalf",
+    "a3":"Boromir",
+    "a4":"Aragon",
+    "correctAnswer":2
+  },
+  {
+    "question":"The song with the beginning lyrics 'we don't need no education' is from ... ?",
+    "a1":"Areosmith",
+    "a2":"Pink Floyd",
+    "a3":"ACDC",
+    "a4":"The Beattles",
+    "correctAnswer":2
+  }
+]
