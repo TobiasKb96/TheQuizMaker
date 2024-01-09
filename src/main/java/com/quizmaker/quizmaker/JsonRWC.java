@@ -5,17 +5,15 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
 import java.lang.reflect.Type;
-import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JsonRWC {  //Jason Read/Write/Check
 
+    //saves a Topic to a .json file (overwrites existing files)
     public static void toFile(Topic topic) {
         String fileName = topic.getName() + ".json";
         List<Question> questionsInTopic = topic.getQuestions();
-        Path filePath = Paths.get("", fileName);
-
         File newFile = new File(fileName);
             try {
                 FileWriter fileWriter = new FileWriter(newFile);
@@ -29,6 +27,7 @@ public class JsonRWC {  //Jason Read/Write/Check
 
     }
 
+    //returns a Topic object from a saved .json file
     public static Topic fromFile(String fileName) {
 
         String filePath = fileName + ".json";
@@ -49,19 +48,26 @@ public class JsonRWC {  //Jason Read/Write/Check
         }
     }
 
+    //returns list of available topics
     public static List<String> getFileNames() {
-        List<String> jsonFileNames = new ArrayList<>();
-        File currentDir = new File(".");
-        File[] files = currentDir.listFiles();
+        List<String> fileNames = new ArrayList<>();
+        File directory = new File(".");
+        File[] files = directory.listFiles();
 
         if (files != null) {
             for (File file : files) {
                 if (file.isFile() && file.getName().endsWith(".json")) {
-                    jsonFileNames.add(file.getName().substring(0, file.getName().lastIndexOf(".")));
+                    fileNames.add(file.getName().substring(0, file.getName().lastIndexOf(".")));
                 }
             }
         }
-        return jsonFileNames;
+        return fileNames;
+    }
+
+    //returns true if filename exists
+    public static boolean checkIfFileExists (String filename){
+        List<String> existingFileNames = getFileNames();
+        return existingFileNames.contains(filename);
     }
 
 }

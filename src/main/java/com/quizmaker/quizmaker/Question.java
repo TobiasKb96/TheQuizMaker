@@ -1,5 +1,7 @@
 package com.quizmaker.quizmaker;
 
+import java.util.Scanner;
+
 public class Question {
 
     public String question, a1, a2, a3, a4;
@@ -60,5 +62,76 @@ public class Question {
 
     public int getCorrectAnswer() {
         return this.correctAnswer;
+    }
+
+    //guides user through question creation
+    public static Question newQuestionScreen(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the question:");
+        String questionText = scanner.next();
+        System.out.println("Enter answer choice 1:");
+        String a1 = scanner.next();
+        System.out.println("Enter answer choice 2:");
+        String a2 = scanner.next();
+        System.out.println("Enter answer choice 3:");
+        String a3 = scanner.next();
+        System.out.println("Enter answer choice 4:");
+        String a4 = scanner.next();
+
+        System.out.println("Answer choices:");
+        System.out.println("1. " + a1);
+        System.out.println("2. " + a2);
+        System.out.println("3. " + a3);
+        System.out.println("4. " + a4);
+
+        System.out.println("Enter the correct answer (1, 2, 3, or 4):");
+        int correctAnswer = scanner.nextInt();
+
+        return new Question(questionText, a1, a2, a3, a4, correctAnswer);
+    }
+
+    public void editQuestionScreen() {
+        while (true) {
+        System.out.println("Choose an option:");
+        System.out.println("1: Edit question text");
+        System.out.println("2: Edit answer choices");
+        System.out.println("3: Edit correct answer");
+        System.out.println("0: Return");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+            switch (input) {
+                case 0:
+                    System.out.println("Question modified successfully!");
+                    return;
+                case 1:
+                    // Edit question text
+                    System.out.println("Enter the new question text:");
+                    String newQuestionText = scanner.next();
+                    this.setQuestion(newQuestionText);
+                    System.out.println("Question text edited successfully!");
+                    break;
+                case 2:
+                    // Edit answer choices
+                    System.out.println("Enter new answer choice 1:");
+                    this.setA1(scanner.next());
+                    System.out.println("Enter new answer choice 2:");
+                    this.setA2(scanner.next());
+                    System.out.println("Enter new answer choice 3:");
+                    this.setA3(scanner.next());
+                    System.out.println("Enter new answer choice 4:");
+                    this.setA4(scanner.next());
+                    System.out.println("Answer choices edited successfully!");
+                    break;
+                case 3:
+                    // Edit correct answer
+                    System.out.println("Enter the new correct answer (1, 2, 3, or 4):");
+                    this.setCorrectAnswer(scanner.nextInt());
+                    System.out.println("Correct answer edited successfully!");
+                    break;
+                default:
+                    System.out.println("Invalid Input. Please try again.");
+            }
+            System.out.println();
+        }
     }
 }
