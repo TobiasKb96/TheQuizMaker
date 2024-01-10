@@ -63,6 +63,7 @@ public class Topic {
             System.out.println("X: Enter number next to the question to modify it");
 
             int modifyChoice = scanner.nextInt();
+            scanner.nextLine();
 
             // Return to the main menu
             if (modifyChoice == 0) {
@@ -93,6 +94,7 @@ public class Topic {
                 System.out.println("0: Return");
 
                 int input = scanner.nextInt();
+                scanner.nextLine();
 
                 switch (input) {
                     case 0:
@@ -107,7 +109,7 @@ public class Topic {
 
                     // Delete this question
                     case 2:
-                        questions.remove(modifyChoice - 1);
+                        questions.remove(modifyChoice - 2);
                         System.out.println("Question deleted successfully!");
                         break;
                     default:
@@ -135,6 +137,7 @@ public class Topic {
         System.out.println("X: Enter Topic number to modify it or press");
         System.out.println("0: Return");
         int topicChoice = scanner.nextInt();
+        scanner.nextLine();
 
         // Return to the main menu
         if (topicChoice == 0) {
@@ -159,13 +162,14 @@ public class Topic {
         List<Question> questions = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose Topic Name:");
-        String topicName = scanner.next();
+        String topicName = scanner.nextLine();
         int input = 0;
         while (true) {
             System.out.println("1: Add question");
             System.out.println("0: Return");
 
             input = scanner.nextInt();
+            scanner.nextLine();
 
             //adds a new Question
             if (input == 1) {

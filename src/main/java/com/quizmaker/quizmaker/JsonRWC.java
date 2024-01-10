@@ -56,7 +56,7 @@ public class JsonRWC {  //Jason Read/Write/Check
 
         if (files != null) {
             for (File file : files) {
-                if (file.isFile() && file.getName().endsWith(".json")) {
+                if (file.isFile() && file.getName().endsWith(".json") && !file.getName().contains("Blank") ) {
                     fileNames.add(file.getName().substring(0, file.getName().lastIndexOf(".")));
                 }
             }
