@@ -1,4 +1,4 @@
-module com.quizmaker.quizmaker {
+module com.quizmaker {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;

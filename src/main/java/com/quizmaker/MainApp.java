@@ -21,7 +21,7 @@ public class MainApp extends Application {
         stage.show();
 
     }
-
+    /*
     public static void playGame(String topicName){
         Scanner scanner = new Scanner(System.in);
         int input = 0;
@@ -115,7 +115,7 @@ public class MainApp extends Application {
 
 
     }
-
+    */
 
 
     public static void main(String[] args) {
