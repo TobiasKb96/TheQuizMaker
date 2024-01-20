@@ -1,16 +1,25 @@
-package com.quizmaker.quizmaker;
+package com.quizmaker.quizmaker.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.layout.AnchorPane;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-    public class questionsScreenController {
+    public class QuestionsScreenController {
+
+        public Button A1, A2, A3, A4, question;
+        public Button halfHalfJoker;
+        public Button passJoker;
+        public ProgressBar progressBar;
+        public AnchorPane allLifes;
+
+        /*
 
         @FXML
         private Button A1;
@@ -60,6 +69,5 @@ import java.util.Random;
             System.out.println("Question passed");
             // Add your code for handling the question pass event
         }
-    }
-
+         */
 }

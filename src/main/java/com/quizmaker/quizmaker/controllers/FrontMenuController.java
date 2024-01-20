@@ -1,4 +1,4 @@
-package com.quizmaker.quizmaker;
+package com.quizmaker.quizmaker.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +18,18 @@ import javafx.scene.control.Button;
 
 public class FrontMenuController {
 
+
+    public Button playButton;
+    public Button topicButton;
+
+    public void startNewGame(ActionEvent actionEvent) {
+    }
+
+    public void switchToEditTopics(ActionEvent actionEvent) {
+    }
+}
+    /*
+
     @FXML
     private Button newGameButton;
 
@@ -36,10 +48,8 @@ public class FrontMenuController {
         // Add your code to open the topics editing screen here
     }
 }
-
-
-
-
+*/
+/*
 public class FrontMenuController {
 
     private GameLogic game;
@@ -59,3 +69,4 @@ public class FrontMenuController {
         System.out.println(game.zahl);
 
     }
+*/

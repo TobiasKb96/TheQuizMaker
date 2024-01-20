@@ -13,4 +13,6 @@ module com.quizmaker.quizmaker {
 
     opens com.quizmaker.quizmaker to javafx.fxml;
     exports com.quizmaker.quizmaker;
+    exports com.quizmaker.quizmaker.controllers;
+    opens com.quizmaker.quizmaker.controllers to javafx.fxml;
 }
