@@ -1,4 +1,4 @@
-package com.quizmaker.quizmaker;
+package com.quizmaker;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

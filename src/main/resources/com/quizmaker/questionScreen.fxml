@@ -5,14 +5,14 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.quizmaker.controllers.QuestionsScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.QuestionsScreenController">
    <children>
       <Button fx:id="question" layoutX="15.0" layoutY="155.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="557.0" text="Question">
          <font>
             <Font name="Andale Mono" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="A1" layoutX="14.0" layoutY="244.0" mnemonicParsing="false" onAction="#clickA1" prefHeight="67.0" prefWidth="279.0" text="A1">
+      <Button fx:id="A1" layoutX="14.0" layoutY="244.0" mnemonicParsing="false" onAction="#clickAnswer" prefHeight="67.0" prefWidth="279.0" text="A1">
          <font>
             <Font name="Andale Mono" size="15.0" />
          </font>

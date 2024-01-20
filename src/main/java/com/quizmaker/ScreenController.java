@@ -1,4 +1,4 @@
-package com.quizmaker.quizmaker;
+package com.quizmaker;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

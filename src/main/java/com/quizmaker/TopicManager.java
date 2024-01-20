@@ -1,4 +1,4 @@
-package com.quizmaker.quizmaker;
+package com.quizmaker;
 
 public class TopicManager {
 

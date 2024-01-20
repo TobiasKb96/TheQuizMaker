@@ -1,4 +1,4 @@
-package com.quizmaker.quizmaker;
+package com.quizmaker;
 
 import java.util.Scanner;
 

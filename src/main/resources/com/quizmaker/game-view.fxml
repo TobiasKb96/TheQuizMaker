@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane depthTest="ENABLE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="514.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.quizmaker.ScreenController">
+<AnchorPane depthTest="ENABLE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="514.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.ScreenController">
    <children>
       <Button fx:id="a3" layoutX="74.0" layoutY="418.0" mnemonicParsing="false" onAction="#onA3Click" prefHeight="55.0" prefWidth="226.0" text="A3" />
       <Button fx:id="a4" layoutX="300.0" layoutY="418.0" mnemonicParsing="false" onAction="#onA4Click" prefHeight="55.0" prefWidth="226.0" text="A4" />

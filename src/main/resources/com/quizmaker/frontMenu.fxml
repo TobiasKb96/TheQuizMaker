@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.FrontMenuController">
+  <children>
+    <AnchorPane fx:id="frontMenu" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <Button fx:id="playButton" layoutX="48.0" layoutY="151.0" mnemonicParsing="false" onAction="#startNewGame" prefHeight="75.0" prefWidth="401.0" text="New Game" textFill="#2b06ff">
+               <font>
+                  <Font name="Andale Mono" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="topicButton" layoutX="48.0" layoutY="265.0" mnemonicParsing="false" onAction="#switchToEditTopics" prefHeight="68.0" prefWidth="401.0" text="Edit Topics" textFill="#2b06ff">
+               <font>
+                  <Font name="Andale Mono" size="16.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="201.0" fitWidth="278.0" layoutX="389.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
+            <Sphere drawMode="LINE" layoutX="578.0" layoutY="80.0" radius="50" />
+            <TextField layoutX="48.0" layoutY="55.0" prefHeight="51.0" prefWidth="385.0" text="Welcome to QuizMaker!">
+               <font>
+                  <Font name="Andale Mono" size="28.0" />
+               </font>
+            </TextField>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
