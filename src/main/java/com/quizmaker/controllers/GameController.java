@@ -44,7 +44,6 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("test");
         Topic gameTopic = JsonRWC.fromFile(data.getData());
         questions = gameTopic.getQuestions();
         Collections.shuffle(questions);

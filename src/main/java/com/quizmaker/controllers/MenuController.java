@@ -31,6 +31,9 @@ public class MenuController {
     }
 
     public void switchToChooseTopic(ActionEvent actionEvent){
+        Screenhandler screenhandler = new Screenhandler();
+        screenhandler.switchScreen(actionEvent, "chooseTopicScreen");
+        /*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/chooseTopicScreen.fxml"));
         Parent parent = null;
         try {
@@ -44,6 +47,8 @@ public class MenuController {
 
         Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
+
+         */
     }
 }
 
