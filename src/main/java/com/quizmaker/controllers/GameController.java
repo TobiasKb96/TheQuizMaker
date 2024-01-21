@@ -51,12 +51,69 @@ public class GameController implements Initializable {
     }
 
     public void removeHalfAnswers(ActionEvent actionEvent) {
+        boolean removeHalfAnswersUsed;
 
+        if (!removeHalfAnswersUsed) {
+            // Identify the incorrect answers
+            List<Integer> incorrectAnswers = new ArrayList<>();
+
+            // Loop through the possible answer choices (1 to 4).
+            // Exclude the correct answer from the list of incorrect answers.
+            for (int i = 1; i <= 4; i++) {
+                if (i != question.getcorrectAnswer()) {
+                    incorrectAnswers.add(i);
+                }
+            }
+
+            // Shuffle the list of incorrect answers to randomize
+            // Select two incorrect answers to grey out
+            Collections.shuffle(incorrectAnswers);
+            incorrectAnswers = incorrectAnswers.subList(0, 2);
+
+            // Display the results to the user
+            System.out.println("50/50 Joker used: Two incorrect answers are now greyed out.");
+
+            // Display each answer choice (1 to 4):
+            // If the answer choice is in the list of incorrect answers, mark it as greyed out.
+            // Otherwise, display the correct and remaining incorrect answers normally.
+            for (int i = 1; i <= 4; i++) {
+                if (incorrectAnswers.contains(i)) {
+                    // Grey out the incorrect answers
+                    System.out.println(i + ". (Greyed Out)");
+                } else {
+                    // Display the correct and remaining incorrect answers
+                    System.out.println(i + ". " + question.getcorrectAnswer().get(i - 1));
+                }
+            }
+                    // Mark the 50/50 Joker as used
+                    removeHalfAnswersUsed = true;
+                } else  {
+                    System.out.println("50/50 Joker has already been used.");
+                }
     }
 
     public void passQuestion(ActionEvent actionEvent) {
 
     }
+
+    public void greyOutAnswer(int answerIndex) {
+        switch (answerIndex) {
+            case 1:
+                A1.getStyleClass().add("greyed-out");
+                break;
+            case 2:
+                A2.getStyleClass().add("greyed-out");
+                break;
+            case 3:
+                A3.getStyleClass().add("greyed-out");
+                break;
+            case 4:
+                A4.getStyleClass().add("greyed-out");
+                break;
+            default:
+                // Handle invalid answer index
+                break;
+        }
 
     public void clickAnswer(ActionEvent actionEvent) {
         String buttonID = ((Button) actionEvent.getSource()).getId();
