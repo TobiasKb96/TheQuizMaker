@@ -16,7 +16,7 @@ public class MainApp extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("menuScreen.fxml"));
         Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, 667,400);
+        Scene scene = new Scene(root, 600,400);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.EditController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.EditController">
     <children>
         <TextField fx:id="inputA1" focusTraversable="false" layoutX="32.0" layoutY="144.0" prefHeight="63.0" prefWidth="256.0" promptText="Enter answer 1" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" />
         <TextField fx:id="inputA2" layoutX="307.0" layoutY="144.0" prefHeight="63.0" prefWidth="256.0" promptText="Enter answer 2" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" />
@@ -32,6 +32,6 @@
                 <Font size="18.0" />
             </font>
         </TextField>
-      <Button layoutX="307.0" layoutY="340.0" mnemonicParsing="false" text="Remove Answer" />
+        <Button layoutX="307.0" layoutY="340.0" mnemonicParsing="false" text="Remove Answer" />
     </children>
 </AnchorPane>

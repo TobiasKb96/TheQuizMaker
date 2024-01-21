@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,6 +24,8 @@ import static java.lang.Thread.sleep;
 public class GameController implements Initializable {
 
     @FXML
+    public Circle life1, life2, life3;
+    @FXML
     private Button A1, A2, A3, A4, question, returnButton, halfHalfJoker, passJoker;
 
     @FXML
@@ -31,6 +35,7 @@ public class GameController implements Initializable {
     private AnchorPane finishedScreen, gameBoard, allLifes;
 
     private List<Question> questions = new ArrayList<>();
+
     private int currentIndex = 0;
 
     private int score = 0;
@@ -46,9 +51,11 @@ public class GameController implements Initializable {
     }
 
     public void removeHalfAnswers(ActionEvent actionEvent) {
+
     }
 
     public void passQuestion(ActionEvent actionEvent) {
+
     }
 
     public void clickAnswer(ActionEvent actionEvent) {

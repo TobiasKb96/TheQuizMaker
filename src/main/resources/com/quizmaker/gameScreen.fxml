@@ -5,8 +5,8 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.GameController">
-    <AnchorPane fx:id="gameBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.GameController">
+    <AnchorPane fx:id="gameBoard" layoutX="-8.0" layoutY="-6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
         <children>
             <Button fx:id="question" layoutX="15.0" layoutY="155.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="557.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="Question">
                 <font>
@@ -33,10 +33,10 @@
                     <Font name="Andale Mono" size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="halfHalfJoker" layoutX="14.0" layoutY="95.0" mnemonicParsing="false" onAction="#removeHalfAnswers" text="50/50" />
-            <Button fx:id="passJoker" layoutX="82.0" layoutY="95.0" mnemonicParsing="false" onAction="#passQuestion" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="Pass" />
+            <Button fx:id="halfHalfJoker" layoutX="38.0" layoutY="109.0" mnemonicParsing="false" onAction="#removeHalfAnswers" text="50/50" />
+            <Button fx:id="passJoker" layoutX="113.0" layoutY="108.0" mnemonicParsing="false" onAction="#passQuestion" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="Pass" />
             <ProgressBar fx:id="progressBar" layoutX="365.0" layoutY="23.0" prefWidth="200.0" progress="1.0" />
-            <AnchorPane fx:id="allLifes" layoutX="26.0" layoutY="20.0" prefHeight="43.0" prefWidth="173.0">
+            <AnchorPane fx:id="allLifes" layoutX="27.0" layoutY="32.0" prefHeight="43.0" prefWidth="175.0">
                 <children>
                     <Circle fx:id="life1" fill="#42b916" layoutX="27.0" layoutY="22.0" radius="13.0" stroke="WHITE" strokeType="INSIDE" />
                     <Circle fx:id="life2" fill="#42b916" layoutX="87.0" layoutY="22.0" radius="13.0" stroke="WHITE" strokeType="INSIDE" />
@@ -45,7 +45,7 @@
             </AnchorPane>
         </children>
     </AnchorPane>
-    <AnchorPane fx:id="finishedScreen" prefHeight="400.0" prefWidth="606.0" visible="false">
+    <AnchorPane fx:id="finishedScreen" layoutX="-5.0" layoutY="-7.0" prefHeight="400.0" prefWidth="600.0" visible="false">
         <children>
             <Label fx:id="infoLabel" alignment="CENTER" layoutX="167.0" layoutY="127.0" prefHeight="67.0" prefWidth="273.0" style="-fx-background-color: white;">
                 <font>
