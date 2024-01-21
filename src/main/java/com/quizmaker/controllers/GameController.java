@@ -28,10 +28,7 @@ public class GameController implements Initializable {
     @FXML
     private Button A1, A2, A3, A4, returnButton, halfHalfJoker, passJoker;
     @FXML
-    private Label question;
-
-    @FXML
-    private Label infoLabel;
+    private Label question, scoreLabel, infoLabel;
 
     @FXML
     private AnchorPane finishedScreen, gameBoard, allLifes;
@@ -131,7 +128,8 @@ public class GameController implements Initializable {
 
     private void checkAnswer(String buttonID) {
         if (buttonID.contains(String.valueOf(questions.get(currentIndex).getCorrectAnswer()))) {
-            score++;
+            score += currentIndex+1;
+            scoreLabel.setText("Score: " + score);
             currentIndex++;
             //TODO: change correct animation
             if (currentIndex > questions.size() - 1) {

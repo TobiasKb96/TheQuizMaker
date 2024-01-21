@@ -7,6 +7,7 @@ import com.quizmaker.dataManagment.JsonRWC;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
@@ -24,6 +25,9 @@ public class EditController implements Initializable {
 
     @FXML
     private ToggleGroup correctToggleGroup;
+
+    @FXML
+    private Label questionNumberLabel;
 
     private Topic topic;
 
@@ -78,13 +82,13 @@ public class EditController implements Initializable {
     }
 
     public void saveTopicState() {
-        String question = inputQuestion.getText().substring(inputQuestion.getText().lastIndexOf(": ")+2);
-        String a1 = inputA1.getText().substring(inputA1.getText().lastIndexOf(": ")+2);
-        String a2 = inputA2.getText().substring(inputA2.getText().lastIndexOf(": ")+2);
-        String a3 = inputA3.getText().substring(inputA3.getText().lastIndexOf(": ")+2);
-        String a4 = inputA4.getText().substring(inputA4.getText().lastIndexOf(": ")+2);
+        String question = inputQuestion.getText();
+        String a1 = inputA1.getText();
+        String a2 = inputA2.getText();
+        String a3 = inputA3.getText();
+        String a4 = inputA4.getText();
 
-        topic.setName(inputTopicName.getText().substring(inputTopicName.getText().lastIndexOf(": ")+2));
+        topic.setName(inputTopicName.getText());
 
         String correctAnswerString = ((ToggleButton) correctToggleGroup.getSelectedToggle()).getId().replaceAll("\\D", "");
         int correctAnswer = Integer.parseInt(correctAnswerString);
@@ -95,12 +99,13 @@ public class EditController implements Initializable {
 
     public void loadCurrentQuestion() {
         correctToggleGroup.getToggles().get(topic.getQuestions().get(currentIndex).getCorrectAnswer()-1).setSelected(true);
-        inputA1.setText("A1: " + topic.getQuestions().get(currentIndex).getA1());
-        inputA2.setText("A2: " + topic.getQuestions().get(currentIndex).getA2());
-        inputA3.setText("A3: " + topic.getQuestions().get(currentIndex).getA3());
-        inputA4.setText("A4: " + topic.getQuestions().get(currentIndex).getA4());
-        inputQuestion.setText("Question number " + (currentIndex+1) + ": " + topic.getQuestions().get(currentIndex).getQuestion());
-        inputTopicName.setText("Topic name: " + topic.getName());
+        inputA1.setText(topic.getQuestions().get(currentIndex).getA1());
+        inputA2.setText(topic.getQuestions().get(currentIndex).getA2());
+        inputA3.setText(topic.getQuestions().get(currentIndex).getA3());
+        inputA4.setText(topic.getQuestions().get(currentIndex).getA4());
+        inputQuestion.setText(topic.getQuestions().get(currentIndex).getQuestion());
+        questionNumberLabel.setText("Question: " + (currentIndex + 1));
+        inputTopicName.setText(topic.getName());
     }
 
     public void removeCurrentQuestion(ActionEvent actionEvent) {

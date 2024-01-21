@@ -49,23 +49,19 @@
                 </font>
             </Button>
             <Button fx:id="halfHalfJoker" layoutX="20.0" layoutY="97.0" mnemonicParsing="false"
-                    onAction="#removeHalfAnswers" prefHeight="50.0" prefWidth="50.0" text="50/50"
-                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"/>
+                    onAction="#removeHalfAnswers" prefHeight="50.0" prefWidth="50.0"
+                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
+                    text="50/50"/>
             <Button fx:id="passJoker" layoutX="90.0" layoutY="97.0" mnemonicParsing="false" onAction="#passQuestion"
                     prefHeight="50.0" prefWidth="50.0"
                     style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
                     text="Pass"/>
-            <ProgressBar fx:id="progressBar" layoutX="365.0" layoutY="23.0" prefWidth="200.0" progress="1.0"/>
-            <AnchorPane fx:id="allLifes" layoutX="27.0" layoutY="32.0" prefHeight="43.0" prefWidth="175.0">
-                <children>
-                    <Circle fx:id="life1" fill="#42b916" layoutX="27.0" layoutY="22.0" radius="13.0" stroke="WHITE"
-                            strokeType="INSIDE"/>
-                    <Circle fx:id="life2" fill="#42b916" layoutX="87.0" layoutY="22.0" radius="13.0" stroke="WHITE"
-                            strokeType="INSIDE"/>
-                    <Circle fx:id="life3" fill="#42b916" layoutX="146.0" layoutY="22.0" radius="13.0" stroke="WHITE"
-                            strokeType="INSIDE"/>
-                </children>
-            </AnchorPane>
+            <Label fx:id="scoreLabel" alignment="CENTER" layoutX="484.0" layoutY="25.0" prefHeight="100.0"
+                   prefWidth="96.0" style="-fx-border-color: lightgrey;" text="Score: 0">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
         </children>
     </AnchorPane>
     <AnchorPane fx:id="finishedScreen" prefHeight="400.0" prefWidth="600.0" visible="false">
