@@ -1,16 +1,17 @@
 package com.quizmaker.controllers;
 
-import com.quizmaker.JsonRWC;
+import com.quizmaker.dataManagment.DataSingelton;
+import com.quizmaker.dataManagment.JsonRWC;
 import com.quizmaker.Question;
 import com.quizmaker.Topic;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -25,24 +26,26 @@ import static java.lang.Thread.sleep;
 
 public class GameController implements Initializable {
 
-    public Button A1, A2, A3, A4, question;
-    public Button halfHalfJoker;
-    public Button passJoker;
-    public ProgressBar progressBar;
-    public AnchorPane allLifes;
-    public Label infoLabel;
-    public Button returnButton;
-    public AnchorPane finishedScreen;
-    public AnchorPane gameBoard;
+    @FXML
+    private Button A1, A2, A3, A4, question, returnButton, halfHalfJoker, passJoker;
+
+    @FXML
+    private Label infoLabel;
+
+    @FXML
+    private AnchorPane finishedScreen, gameBoard, allLifes;
 
     private List<Question> questions = new ArrayList<>();
     private int currentIndex = 0;
 
     private int score = 0;
 
+    DataSingelton data = DataSingelton.getInstance();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Topic gameTopic = JsonRWC.fromFile("Sciency things");
+        System.out.println("test");
+        Topic gameTopic = JsonRWC.fromFile(data.getData());
         questions = gameTopic.getQuestions();
         Collections.shuffle(questions);
         loadQuestion();

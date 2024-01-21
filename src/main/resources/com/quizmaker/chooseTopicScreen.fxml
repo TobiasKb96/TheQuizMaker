@@ -6,30 +6,30 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.ChooseTopicController">
-   <children>
-      <Sphere drawMode="LINE" layoutX="536.0" layoutY="72.0" radius="50" />
-      <TextField fx:id="topicOverviewLabel" layoutX="28.0" layoutY="46.0" prefHeight="51.0" prefWidth="401.0" text="Edit or create new topics! ">
-         <font>
-            <Font name="Andale Mono" size="24.0" />
-         </font>
-      </TextField>
-      <Button fx:id="createNewTopic" layoutX="28.0" layoutY="314.0" mnemonicParsing="false" onAction="#toEditScreen" prefHeight="38.0" prefWidth="129.0" text="Create New Topic" textFill="#1ea134">
-         <font>
-            <Font name="Andale Mono" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="deleteTopic" layoutX="330.0" layoutY="314.0" mnemonicParsing="false" onAction="#deleteTopic" prefHeight="38.0" prefWidth="129.0" text="Delete Topic" textFill="#c90e0e">
-         <font>
-            <Font name="Andale Mono" size="13.0" />
-         </font>
-      </Button>
-      <Button fx:id="back1" layoutX="503.0" layoutY="320.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="26.0" prefWidth="49.0" text="Back">
-         <font>
-            <Font name="Andale Mono" size="12.0" />
-         </font>
-      </Button>
-      <ListView fx:id="topicList" layoutX="28.0" layoutY="100.0" prefHeight="200.0" prefWidth="401.0" />
-      <Button layoutX="179.0" layoutY="314.0" mnemonicParsing="false" onAction="#toEditScreen" prefHeight="38.0" prefWidth="129.0" text="Edit Topic" textFill="#140acd" />
-      <Button fx:id="playGame" layoutX="459.0" layoutY="174.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="89.0" text="Play" />
-   </children>
+    <children>
+        <Sphere drawMode="LINE" layoutX="536.0" layoutY="72.0" radius="50" />
+        <TextField fx:id="topicOverviewLabel" layoutX="28.0" layoutY="46.0" prefHeight="51.0" prefWidth="401.0" text="Edit or create new topics! ">
+            <font>
+                <Font name="Andale Mono" size="24.0" />
+            </font>
+        </TextField>
+        <Button fx:id="createTopicButton" layoutX="28.0" layoutY="314.0" mnemonicParsing="false" onAction="#toEditScreen" prefHeight="38.0" prefWidth="129.0" text="Create New Topic" textFill="#1ea134">
+            <font>
+                <Font name="Andale Mono" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="deleteTopicButton" layoutX="330.0" layoutY="314.0" mnemonicParsing="false" onAction="#deleteTopic" prefHeight="38.0" prefWidth="129.0" text="Delete Topic" textFill="#c90e0e">
+            <font>
+                <Font name="Andale Mono" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="back1" layoutX="503.0" layoutY="320.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="26.0" prefWidth="49.0" text="Back">
+            <font>
+                <Font name="Andale Mono" size="12.0" />
+            </font>
+        </Button>
+        <ListView fx:id="topicList" layoutX="28.0" layoutY="100.0" prefHeight="200.0" prefWidth="401.0" />
+        <Button fx:id="editTopicButton" layoutX="179.0" layoutY="314.0" mnemonicParsing="false" onAction="#toEditScreen" prefHeight="38.0" prefWidth="129.0" text="Edit Topic" textFill="#140acd" />
+        <Button fx:id="playButton" layoutX="459.0" layoutY="174.0" mnemonicParsing="false" onAction="#startGame" prefHeight="38.0" prefWidth="89.0" text="Play" />
+    </children>
 </AnchorPane>

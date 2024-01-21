@@ -1,7 +1,9 @@
-package com.quizmaker;
+package com.quizmaker.dataManagment;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.quizmaker.Question;
+import com.quizmaker.Topic;
 
 import java.io.*;
 import java.lang.reflect.Type;

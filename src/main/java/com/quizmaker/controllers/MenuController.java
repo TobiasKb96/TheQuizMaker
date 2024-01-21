@@ -1,5 +1,6 @@
 package com.quizmaker.controllers;
 
+import com.quizmaker.dataManagment.DataSingelton;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.Parent;
@@ -13,13 +14,24 @@ import java.io.IOException;
 
 public class MenuController {
 
-
-    public Button playButton;
-    public Button topicButton;
+    @FXML
+    private Button playButton, topicButton;
+    DataSingelton data = DataSingelton.getInstance();
 
     public void startNewGame(ActionEvent actionEvent) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/gameScreen.fxml"));
+        data.setData("Play");
+        switchToChooseTopic(actionEvent);
+    }
+
+
+    public void switchToEditTopics(ActionEvent actionEvent) {
+        data.setData("Edit");
+        switchToChooseTopic(actionEvent);
+    }
+
+    public void switchToChooseTopic(ActionEvent actionEvent){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/chooseTopicScreen.fxml"));
         Parent parent = null;
         try {
             parent = loader.load();
@@ -33,43 +45,5 @@ public class MenuController {
         Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
-
-
-    public void switchToEditTopics(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/gameScreen.fxml"));
-        Parent parent = null;
-        try {
-            parent = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-
-        // Create a new scene with the SecondScreen.fxml content
-        Scene scene = new Scene(parent);
-
-        // Get the current stage and set the new scene
-        Stage stage = (Stage) playButton.getScene().getWindow();
-        stage.setScene(scene);
-    }
 }
-/*
-    @FXML
-    private Button newGameButton;
 
-    @FXML
-    private Button editTopicsButton;
-
-    @FXML
-    private void handleNewGame(ActionEvent event) {
-        System.out.println("New Game button clicked");
-        // Add your code to start a new game here
-    }
-
-    @FXML
-    private void handleEditTopics(ActionEvent event) {
-        System.out.println("Edit Topics button clicked");
-        // Add your code to open the topics editing screen here
-    }
-}
-*/

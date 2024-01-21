@@ -15,6 +15,7 @@ public class Screenhandler{
 //TODO :
 // write switch Scene funktion e.g.:
 // public static void switchScene(String fxmlFile){ ... }
+// Replace Scene switching methodes in controller classes
 
 
 
