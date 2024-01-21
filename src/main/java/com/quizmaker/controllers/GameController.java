@@ -51,11 +51,63 @@ public class GameController implements Initializable {
     }
 
     public void removeHalfAnswers(ActionEvent actionEvent) {
+            // Identify the incorrect answers
+            List<Integer> incorrectAnswers = new ArrayList<>();
 
-    }
+            // Loop through the possible answer choices (1 to 4).
+            // Exclude the correct answer from the list of incorrect answers.
+            for (int i = 1; i <= 4; i++) {
+                if (i != questions.get(currentIndex).getCorrectAnswer()) {
+                    incorrectAnswers.add(i);
+                }
+            }
+
+            // Shuffle the list of incorrect answers to randomize
+            // Select two incorrect answers to grey out
+            Collections.shuffle(incorrectAnswers);
+            incorrectAnswers = incorrectAnswers.subList(0, 2);
+
+            // Display the results to the user
+            System.out.println("50/50 Joker used: Two incorrect answers are now greyed out.");
+
+            // Display each answer choice (1 to 4):
+            // If the answer choice is in the list of incorrect answers, mark it as greyed out.
+            // Otherwise, display the correct and remaining incorrect answers normally.
+            for (int i = 1; i <= 4; i++) {
+                if (incorrectAnswers.contains(i)) {
+                    // Grey out the incorrect answers
+                    greyOutAnswer(i);
+                    }
+            }
+            // Mark the 50/50 Joker as used
+            halfHalfJoker.setDisable(true);
+        }
+
 
     public void passQuestion(ActionEvent actionEvent) {
+        currentIndex ++;
+        loadQuestion();
+        passJoker.setDisable(true);
+    }
 
+    public void greyOutAnswer(int answerIndex) {
+        switch (answerIndex) {
+            case 1:
+                A1.setDisable(true);
+                break;
+            case 2:
+                A2.setDisable(true);
+                break;
+            case 3:
+                A3.setDisable(true);
+                break;
+            case 4:
+                A4.setDisable(true);
+                break;
+            default:
+                // Handle invalid answer index
+                break;
+        }
     }
 
     public void clickAnswer(ActionEvent actionEvent) {
@@ -64,6 +116,10 @@ public class GameController implements Initializable {
     }
 
     private void loadQuestion() {
+        A1.setDisable(false);
+        A2.setDisable(false);
+        A3.setDisable(false);
+        A4.setDisable(false);
         question.setText(questions.get(currentIndex).getQuestion());
         A1.setText(questions.get(currentIndex).getA1());
         A2.setText(questions.get(currentIndex).getA2());
