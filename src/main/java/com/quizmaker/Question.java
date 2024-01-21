@@ -64,6 +64,7 @@ public class Question {
         return this.correctAnswer;
     }
 
+    /*
     //guides user through question creation
     public static Question newQuestionScreen(){
         Scanner scanner = new Scanner(System.in);
@@ -143,4 +144,6 @@ public class Question {
             System.out.println();
         }
     }
+    */
+
 }

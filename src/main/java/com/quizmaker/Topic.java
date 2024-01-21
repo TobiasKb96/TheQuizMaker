@@ -35,6 +35,9 @@ public class Topic {
     public void removeQuestion(int pos) {
         this.questions.remove(pos);
     }
+    public void setQuestion(int questionNr, Question question){
+        this.questions.set(questionNr, question);
+    }
 
     public String getName() { //get name of Topic
         return this.name;
@@ -46,6 +49,7 @@ public class Topic {
         return this.questions.size();
     }
 
+    /*
     public void modifyTopicScreen() {
         Scanner scanner = new Scanner(System.in);
         List<Question> questions = this.getQuestions();
@@ -193,4 +197,6 @@ public class Topic {
             }
         }
     }
+
+     */
 }

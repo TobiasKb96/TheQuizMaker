@@ -6,16 +6,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -52,30 +47,33 @@ public class ChooseTopicController implements Initializable {
     }
 
     public void toEditScreen(ActionEvent actionEvent) {
-        Screenhandler screenhandler = new Screenhandler();
-        screenhandler.switchScreen(actionEvent, "editScreen");
+        ScreenHandler screenHandler = new ScreenHandler();
+        screenHandler.switchScreen(actionEvent, "editScreen");
     }
 
     public void deleteTopic(ActionEvent actionEvent) {
+
     }
 
     public void returnToMainMenu(ActionEvent actionEvent) {
-        Screenhandler screenhandler = new Screenhandler();
-        screenhandler.switchScreen(actionEvent, "menuScreen");
+        ScreenHandler screenHandler = new ScreenHandler();
+        screenHandler.switchScreen(actionEvent, "menuScreen");
 }
 
     public void startGame(ActionEvent actionEvent) {
-        Screenhandler screenhandler = new Screenhandler();
-        screenhandler.switchScreen(actionEvent, "gameScreen");
+        ScreenHandler screenHandler = new ScreenHandler();
+        screenHandler.switchScreen(actionEvent, "gameScreen");
     }
 
     private void setupOverviewMode(String overviewMode){
         if(overviewMode.equals("Play")){
+            topicOverviewLabel.setText("Choose a topic to play!");
             createTopicButton.setVisible(false);
             editTopicButton.setVisible(false);
             deleteTopicButton.setVisible(false);
         }
         else if (overviewMode.equals("Edit")){
+            topicOverviewLabel.setText("Modify or create a new topic!");
             playButton.setVisible(false);
         }
     }
