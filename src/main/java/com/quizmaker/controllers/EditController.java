@@ -39,13 +39,21 @@ public class EditController implements Initializable {
         }
         else topic = JsonRWC.fromFile(data.getData());
 
+        // Listener to prevent unselecting
+        correctToggleGroup.selectedToggleProperty().addListener((obs, oldToggle, newToggle) -> {
+            if (newToggle == null) {
+                // If the user tries to unselect, reselect the previous toggle
+                correctToggleGroup.selectToggle(oldToggle);
+            }
+        });
+
+
         loadCurrentQuestion();
     }
 
     public void showNextQuestion(ActionEvent actionEvent) {
         saveTopicState();
-        currentIndex++;
-        if(topic.questions.size() <= currentIndex) topic.questions.add(new Question());
+        if(currentIndex < topic.questions.size()-1) currentIndex++;
         loadCurrentQuestion();
     }
 
@@ -66,6 +74,7 @@ public class EditController implements Initializable {
     }
 
     public void correctAnswerInput(ActionEvent actionEvent) {
+
     }
 
     public void saveTopicState() {
@@ -76,8 +85,10 @@ public class EditController implements Initializable {
         String a4 = inputA4.getText().substring(inputA4.getText().lastIndexOf(": ")+2);
 
         topic.setName(inputTopicName.getText().substring(inputTopicName.getText().lastIndexOf(": ")+2));
+
         String correctAnswerString = ((ToggleButton) correctToggleGroup.getSelectedToggle()).getId().replaceAll("\\D", "");
         int correctAnswer = Integer.parseInt(correctAnswerString);
+
         Question questionToSave = new Question(question, a1, a2, a3, a4,correctAnswer);
         topic.setQuestion(currentIndex, questionToSave);
     }
@@ -90,5 +101,17 @@ public class EditController implements Initializable {
         inputA4.setText("A4: " + topic.getQuestions().get(currentIndex).getA4());
         inputQuestion.setText("Question number " + (currentIndex+1) + ": " + topic.getQuestions().get(currentIndex).getQuestion());
         inputTopicName.setText("Topic name: " + topic.getName());
+    }
+
+    public void removeCurrentQuestion(ActionEvent actionEvent) {
+        topic.removeQuestion(currentIndex);
+        if(currentIndex > 0) currentIndex --;
+        loadCurrentQuestion();
+    }
+
+    public void addNewQuestion(ActionEvent actionEvent) {
+        topic.addQuestion(new Question());
+        currentIndex = topic.questions.size()-1;
+        loadCurrentQuestion();
     }
 }

@@ -60,7 +60,6 @@ public class GameController implements Initializable {
 
     public void clickAnswer(ActionEvent actionEvent) {
         String buttonID = ((Button) actionEvent.getSource()).getId();
-        System.out.println(buttonID);
         checkAnswer(buttonID);
     }
 
@@ -74,7 +73,6 @@ public class GameController implements Initializable {
 
     private void checkAnswer(String buttonID) {
         if (buttonID.contains(String.valueOf(questions.get(currentIndex).getCorrectAnswer()))) {
-            System.out.println("correct");
             score++;
             currentIndex++;
             //TODO: change correct animation
