@@ -7,43 +7,31 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="380.0" prefWidth="667.0"
-            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.quizmaker.controllers.MenuController">
+<AnchorPane fx:id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="380.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.MenuController">
     <children>
-        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;"
-               text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="playButton" layoutX="48.0" layoutY="151.0" mnemonicParsing="false" onAction="#startNewGame"
-                prefHeight="75.0" prefWidth="401.0"
-                style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
-                text="New Game" textFill="#2b06ff">
+        <Button fx:id="playButton" layoutX="48.0" layoutY="151.0" mnemonicParsing="false" onAction="#startNewGame" prefHeight="75.0" prefWidth="401.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="New Game" textFill="#2b06ff">
             <font>
-                <Font name="Andale Mono" size="16.0"/>
+                <Font name="Andale Mono" size="16.0" />
             </font>
         </Button>
-        <Button fx:id="topicButton" layoutX="48.0" layoutY="265.0" mnemonicParsing="false"
-                onAction="#switchToEditTopics" prefHeight="68.0" prefWidth="401.0"
-                style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
-                text="Edit Topics" textFill="#2b06ff">
+        <Button fx:id="topicButton" layoutX="48.0" layoutY="265.0" mnemonicParsing="false" onAction="#switchToEditTopics" prefHeight="68.0" prefWidth="401.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="Edit Topics" textFill="#2b06ff">
             <font>
-                <Font name="Andale Mono" size="16.0"/>
+                <Font name="Andale Mono" size="16.0" />
             </font>
         </Button>
-        <ImageView fitHeight="201.0" fitWidth="278.0" focusTraversable="true" layoutX="389.0" layoutY="16.0"
-                   pickOnBounds="true" preserveRatio="true"/>
-        <Sphere drawMode="LINE" layoutX="578.0" layoutY="80.0" radius="50"/>
-        <TextField editable="false" layoutX="48.0" layoutY="55.0" pickOnBounds="false" prefHeight="51.0"
-                   prefWidth="385.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
-                   text="Welcome to QuizMaker!">
+        <ImageView fitHeight="201.0" fitWidth="278.0" focusTraversable="true" layoutX="389.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
+        <Sphere drawMode="LINE" layoutX="578.0" layoutY="80.0" radius="50" />
+        <TextField editable="false" layoutX="48.0" layoutY="55.0" pickOnBounds="false" prefHeight="51.0" prefWidth="385.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="Welcome to QuizMaker!">
             <font>
-                <Font name="Andale Mono" size="28.0"/>
+                <Font name="Andale Mono" size="28.0" />
             </font>
             <cursor>
-                <Cursor fx:constant="DEFAULT"/>
+                <Cursor fx:constant="DEFAULT" />
             </cursor>
         </TextField>
     </children>

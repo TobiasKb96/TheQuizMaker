@@ -2,6 +2,7 @@ package com.quizmaker;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -14,10 +15,11 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("menuScreen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 667,400);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
-
     }
 
     //old Console Output code
@@ -122,7 +124,6 @@ public class MainApp extends Application {
 
         //Old console Output code
         //gameLoop();
-
         launch();
 
     }
