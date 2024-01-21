@@ -45,34 +45,11 @@ public class Question {
         return this.a4;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public void setA1(String a1) {
-        this.a1 = a1;
-    }
-
-    public void setA2(String a2) {
-        this.a2 = a2;
-    }
-
-    public void setA3(String a3) {
-        this.a3 = a3;
-    }
-
-    public void setA4(String a4) {
-        this.a4 = a4;
-    }
-
-    public void setCorrectAnswer(int correctAnswer) {
-        this.correctAnswer = correctAnswer;
-    }
-
     public int getCorrectAnswer() {
         return this.correctAnswer;
     }
 
+    //Old console Output code
     /*
     //guides user through question creation
     public static Question newQuestionScreen(){

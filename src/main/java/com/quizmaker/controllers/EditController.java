@@ -18,11 +18,13 @@ public class EditController implements Initializable {
 
     @FXML
     private ToggleButton correctToggle1, correctToggle2, correctToggle3, correctToggle4;
+
     @FXML
     private TextField inputA1, inputA2, inputA3, inputA4, inputQuestion, inputTopicName;
 
     @FXML
     private ToggleGroup correctToggleGroup;
+
     private Topic topic;
 
     private int currentIndex = 0;
@@ -64,7 +66,6 @@ public class EditController implements Initializable {
     }
 
     public void correctAnswerInput(ActionEvent actionEvent) {
-
     }
 
     public void saveTopicState() {

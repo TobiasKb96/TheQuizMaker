@@ -8,8 +8,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.lang.Override;
 import java.lang.String;
-import java.lang.System;
-import java.util.*;
 
 
 public class MainApp extends Application {
@@ -21,6 +19,8 @@ public class MainApp extends Application {
         stage.show();
 
     }
+
+    //old Console Output code
     /*
     public static void playGame(String topicName){
         Scanner scanner = new Scanner(System.in);
@@ -119,25 +119,9 @@ public class MainApp extends Application {
 
 
     public static void main(String[] args) {
+
+        //Old console Output code
         //gameLoop();
-        /*
-        Question testQuestion1 = new Question("Was ist 3", "4", "3", "2", "1", 4);
-        Question testQuestion2 = new Question("Was ist 2", "4", "3", "2", "1", 3);
-        ArrayList<Question> questions = new ArrayList<>();
-        questions.add(testQuestion1);
-        questions.add(testQuestion2);
-        Topic testTopic = new Topic("was_ist4",questions);
-        Topic testReadTopic;
-        */
-        //Topic readtopic = new Topic(JsonRWC.fromFile("was_ist1"));
-        //readtopic = JsonRWC.fromFile("was_ist1");
-
-        //List fileNames = new ArrayList();
-        //fileNames = JsonRWC.getFileNames();
-
-
-        System.out.println("test");
-
 
         launch();
 

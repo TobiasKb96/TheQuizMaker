@@ -55,6 +55,7 @@ public class Topic {
         return this.questions.size();
     }
 
+    //Old console Output code
     /*
     public void modifyTopicScreen() {
         Scanner scanner = new Scanner(System.in);
