@@ -51,16 +51,13 @@ public class GameController implements Initializable {
     }
 
     public void removeHalfAnswers(ActionEvent actionEvent) {
-        boolean removeHalfAnswersUsed;
-
-        if (!removeHalfAnswersUsed) {
             // Identify the incorrect answers
             List<Integer> incorrectAnswers = new ArrayList<>();
 
             // Loop through the possible answer choices (1 to 4).
             // Exclude the correct answer from the list of incorrect answers.
             for (int i = 1; i <= 4; i++) {
-                if (i != question.getcorrectAnswer()) {
+                if (i != questions.get(currentIndex).getCorrectAnswer()) {
                     incorrectAnswers.add(i);
                 }
             }
@@ -79,41 +76,39 @@ public class GameController implements Initializable {
             for (int i = 1; i <= 4; i++) {
                 if (incorrectAnswers.contains(i)) {
                     // Grey out the incorrect answers
-                    System.out.println(i + ". (Greyed Out)");
-                } else {
-                    // Display the correct and remaining incorrect answers
-                    System.out.println(i + ". " + question.getcorrectAnswer().get(i - 1));
-                }
+                    greyOutAnswer(i);
+                    }
             }
-                    // Mark the 50/50 Joker as used
-                    removeHalfAnswersUsed = true;
-                } else  {
-                    System.out.println("50/50 Joker has already been used.");
-                }
-    }
+            // Mark the 50/50 Joker as used
+            halfHalfJoker.setDisable(true);
+        }
+
 
     public void passQuestion(ActionEvent actionEvent) {
-
+        currentIndex ++;
+        loadQuestion();
+        passJoker.setDisable(true);
     }
 
     public void greyOutAnswer(int answerIndex) {
         switch (answerIndex) {
             case 1:
-                A1.getStyleClass().add("greyed-out");
+                A1.setDisable(true);
                 break;
             case 2:
-                A2.getStyleClass().add("greyed-out");
+                A2.setDisable(true);
                 break;
             case 3:
-                A3.getStyleClass().add("greyed-out");
+                A3.setDisable(true);
                 break;
             case 4:
-                A4.getStyleClass().add("greyed-out");
+                A4.setDisable(true);
                 break;
             default:
                 // Handle invalid answer index
                 break;
         }
+    }
 
     public void clickAnswer(ActionEvent actionEvent) {
         String buttonID = ((Button) actionEvent.getSource()).getId();
@@ -122,6 +117,10 @@ public class GameController implements Initializable {
     }
 
     private void loadQuestion() {
+        A1.setDisable(false);
+        A2.setDisable(false);
+        A3.setDisable(false);
+        A4.setDisable(false);
         question.setText(questions.get(currentIndex).getQuestion());
         A1.setText(questions.get(currentIndex).getA1());
         A2.setText(questions.get(currentIndex).getA2());
