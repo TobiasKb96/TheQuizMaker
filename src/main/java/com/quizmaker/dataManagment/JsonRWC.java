@@ -7,6 +7,9 @@ import com.quizmaker.Topic;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +73,24 @@ public class JsonRWC {  //Jason Read/Write/Check
     public static boolean checkIfFileExists (String filename){
         List<String> existingFileNames = getFileNames();
         return existingFileNames.contains(filename);
+    }
+
+    public static void deleteFile(String fileName){
+        String filePath = fileName + ".json";
+        Path path = Paths.get(filePath);
+        try {
+            // Check if the file exists
+            if (Files.exists(path)) {
+                // Delete the file
+                Files.delete(path);
+                System.out.println("File deleted successfully.");
+            } else {
+                System.out.println("File does not exist.");
+            }
+        } catch (IOException e) {
+            // Handle IOException if any
+            e.printStackTrace();
+        }
     }
 
 }

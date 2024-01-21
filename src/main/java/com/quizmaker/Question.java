@@ -16,6 +16,15 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
+    public Question(){
+        this.question = "";
+        this.a1 = "";
+        this.a2 = "";
+        this.a3 = "";
+        this.a4 = "";
+        this.correctAnswer = 1;
+    }
+
     public String getQuestion() {
         return this.question;
     }

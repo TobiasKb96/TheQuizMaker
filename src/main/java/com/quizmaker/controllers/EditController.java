@@ -12,7 +12,6 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class EditController implements Initializable {
@@ -33,39 +32,49 @@ public class EditController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        topic = JsonRWC.fromFile(data.getData());
+        if(data.getData().equals("NewTopic")){
+            topic = new Topic();
+        }
+        else topic = JsonRWC.fromFile(data.getData());
 
         loadCurrentQuestion();
     }
 
     public void showNextQuestion(ActionEvent actionEvent) {
-        saveQuestion();
+        saveTopicState();
         currentIndex++;
+        if(topic.questions.size() <= currentIndex) topic.questions.add(new Question());
         loadCurrentQuestion();
     }
 
     public void showPreviousQuestion(ActionEvent actionEvent) {
-        saveQuestion();
+        saveTopicState();
         if (currentIndex > 0) {
             currentIndex--;
             loadCurrentQuestion();
         }
     }
 
-    public void saveTopic(ActionEvent actionEvent) {
-        saveQuestion();
+    public void saveTopicToFile(ActionEvent actionEvent) {
+        saveTopicState();
+        JsonRWC.toFile(topic);
+        ScreenHandler screenHandler = new ScreenHandler();
+        data.setData("Edit");
+        screenHandler.switchScreen(actionEvent, "chooseTopicScreen");
     }
 
     public void correctAnswerInput(ActionEvent actionEvent) {
 
     }
 
-    public void saveQuestion() {
+    public void saveTopicState() {
         String question = inputQuestion.getText().substring(inputQuestion.getText().lastIndexOf(": ")+2);
         String a1 = inputA1.getText().substring(inputA1.getText().lastIndexOf(": ")+2);
         String a2 = inputA2.getText().substring(inputA2.getText().lastIndexOf(": ")+2);
         String a3 = inputA3.getText().substring(inputA3.getText().lastIndexOf(": ")+2);
         String a4 = inputA4.getText().substring(inputA4.getText().lastIndexOf(": ")+2);
+
+        topic.setName(inputTopicName.getText().substring(inputTopicName.getText().lastIndexOf(": ")+2));
         String correctAnswerString = ((ToggleButton) correctToggleGroup.getSelectedToggle()).getId().replaceAll("\\D", "");
         int correctAnswer = Integer.parseInt(correctAnswerString);
         Question questionToSave = new Question(question, a1, a2, a3, a4,correctAnswer);
@@ -78,11 +87,7 @@ public class EditController implements Initializable {
         inputA2.setText("A2: " + topic.getQuestions().get(currentIndex).getA2());
         inputA3.setText("A3: " + topic.getQuestions().get(currentIndex).getA3());
         inputA4.setText("A4: " + topic.getQuestions().get(currentIndex).getA4());
-        inputQuestion.setText("Question: " + topic.getQuestions().get(currentIndex).getQuestion());
+        inputQuestion.setText("Question number " + (currentIndex+1) + ": " + topic.getQuestions().get(currentIndex).getQuestion());
         inputTopicName.setText("Topic name: " + topic.getName());
     }
-
-
-
-
 }

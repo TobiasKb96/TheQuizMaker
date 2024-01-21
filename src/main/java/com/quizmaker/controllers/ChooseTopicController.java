@@ -52,7 +52,8 @@ public class ChooseTopicController implements Initializable {
     }
 
     public void deleteTopic(ActionEvent actionEvent) {
-
+        JsonRWC.deleteFile(selectedTopic);
+        topicList.getItems().remove(topicList.getSelectionModel().getSelectedItem());
     }
 
     public void returnToMainMenu(ActionEvent actionEvent) {
@@ -76,5 +77,11 @@ public class ChooseTopicController implements Initializable {
             topicOverviewLabel.setText("Modify or create a new topic!");
             playButton.setVisible(false);
         }
+    }
+
+    public void toCreateScreen(ActionEvent actionEvent) {
+        data.setData("NewTopic");
+        ScreenHandler screenHandler = new ScreenHandler();
+        screenHandler.switchScreen(actionEvent, "editScreen");
     }
 }

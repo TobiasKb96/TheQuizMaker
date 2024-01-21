@@ -25,8 +25,9 @@ public class Topic {
         this.questions = new ArrayList<>(existingTopic.getQuestions());
     }
     public Topic() {
-        this.name = null;
+        this.name = "";
         this.questions = new ArrayList<>();
+        this.questions.add(new Question());
     }
 
     public void addQuestion(Question question) { //add question to List of questions
@@ -42,6 +43,11 @@ public class Topic {
     public String getName() { //get name of Topic
         return this.name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public List<Question> getQuestions() { //get List of Questions in Topic
         return questions;
     }
