@@ -52,54 +52,21 @@ public class ChooseTopicController implements Initializable {
     }
 
     public void toEditScreen(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/editScreen.fxml"));
-        Parent parent = null;
-        try {
-            parent = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-
-        Scene scene = new Scene(parent);
-
-        Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
+        Screenhandler screenhandler = new Screenhandler();
+        screenhandler.switchScreen(actionEvent, "editScreen");
     }
 
     public void deleteTopic(ActionEvent actionEvent) {
     }
 
     public void returnToMainMenu(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/menuScreen.fxml"));
-        Parent parent = null;
-        try {
-            parent = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-
-        Scene scene = new Scene(parent);
-
-        Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-    }
+        Screenhandler screenhandler = new Screenhandler();
+        screenhandler.switchScreen(actionEvent, "menuScreen");
+}
 
     public void startGame(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/gameScreen.fxml"));
-        Parent parent = null;
-        try {
-            parent = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-
-        Scene scene = new Scene(parent);
-
-        Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
-        stage.setScene(scene);
+        Screenhandler screenhandler = new Screenhandler();
+        screenhandler.switchScreen(actionEvent, "gameScreen");
     }
 
     private void setupOverviewMode(String overviewMode){

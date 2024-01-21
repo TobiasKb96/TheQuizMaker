@@ -91,21 +91,8 @@ public class GameController implements Initializable {
     }
 
     public void returnToFrontMenu(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/menuScreen.fxml"));
-        Parent parent = null;
-        try {
-            parent = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-
-        // Create a new scene with the SecondScreen.fxml content
-        Scene scene = new Scene(parent);
-
-        // Get the current stage and set the new scene
-        Stage stage = (Stage) A1.getScene().getWindow();
-        stage.setScene(scene);
+        Screenhandler screenhandler = new Screenhandler();
+        screenhandler.switchScreen(actionEvent, "menuScreen");
     }
 }
         /*
