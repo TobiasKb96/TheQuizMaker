@@ -26,7 +26,9 @@ public class GameController implements Initializable {
     @FXML
     public Circle life1, life2, life3;
     @FXML
-    private Button A1, A2, A3, A4, question, returnButton, halfHalfJoker, passJoker;
+    private Button A1, A2, A3, A4, returnButton, halfHalfJoker, passJoker;
+    @FXML
+    private Label question;
 
     @FXML
     private Label infoLabel;

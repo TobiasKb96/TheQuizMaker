@@ -5,54 +5,81 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.controllers.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.quizmaker.controllers.GameController">
     <AnchorPane fx:id="gameBoard" prefHeight="400.0" prefWidth="600.0">
         <children>
-            <Button fx:id="question" layoutX="20.0" layoutY="170.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="560.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="Question">
+            <Label fx:id="question" alignment="CENTER" layoutX="20.0" layoutY="170.0" prefHeight="60.0"
+                   prefWidth="560.0" style="-fx-border-color: lightgrey;" text="Question">
                 <font>
-                    <Font name="Andale Mono" size="13.0" />
+                    <Font size="13.0"/>
+                </font>
+            </Label>
+            <Button fx:id="A1" layoutX="20.0" layoutY="250.0" mnemonicParsing="false" onAction="#clickAnswer"
+                    prefHeight="55.0" prefWidth="270.0"
+                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
+                    text="A1">
+                <font>
+                    <Font name="Andale Mono" size="15.0"/>
                 </font>
             </Button>
-            <Button fx:id="A1" layoutX="20.0" layoutY="250.0" mnemonicParsing="false" onAction="#clickAnswer" prefHeight="55.0" prefWidth="270.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="A1">
+            <Button fx:id="A2" layoutX="310.0" layoutY="250.0" mnemonicParsing="false" onAction="#clickAnswer"
+                    prefHeight="55.0" prefWidth="270.0"
+                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
+                    text="A2">
                 <font>
-                    <Font name="Andale Mono" size="15.0" />
+                    <Font name="Andale Mono" size="15.0"/>
                 </font>
             </Button>
-            <Button fx:id="A2" layoutX="310.0" layoutY="250.0" mnemonicParsing="false" onAction="#clickAnswer" prefHeight="55.0" prefWidth="270.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="A2">
+            <Button fx:id="A3" layoutX="20.0" layoutY="320.0" mnemonicParsing="false" onAction="#clickAnswer"
+                    prefHeight="55.0" prefWidth="270.0"
+                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
+                    text="A3">
                 <font>
-                    <Font name="Andale Mono" size="15.0" />
+                    <Font name="Andale Mono" size="15.0"/>
                 </font>
             </Button>
-            <Button fx:id="A3" layoutX="20.0" layoutY="320.0" mnemonicParsing="false" onAction="#clickAnswer" prefHeight="55.0" prefWidth="270.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="A3">
+            <Button fx:id="A4" layoutX="310.0" layoutY="320.0" mnemonicParsing="false" onAction="#clickAnswer"
+                    prefHeight="55.0" prefWidth="270.0"
+                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
+                    text="A4">
                 <font>
-                    <Font name="Andale Mono" size="15.0" />
+                    <Font name="Andale Mono" size="14.0"/>
                 </font>
             </Button>
-            <Button fx:id="A4" layoutX="310.0" layoutY="320.0" mnemonicParsing="false" onAction="#clickAnswer" prefHeight="55.0" prefWidth="270.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="A4">
-                <font>
-                    <Font name="Andale Mono" size="14.0" />
-                </font>
-            </Button>
-            <Button fx:id="halfHalfJoker" layoutX="20.0" layoutY="97.0" mnemonicParsing="false" onAction="#removeHalfAnswers" prefHeight="50.0" prefWidth="50.0" text="50/50" />
-            <Button fx:id="passJoker" layoutX="90.0" layoutY="97.0" mnemonicParsing="false" onAction="#passQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="Pass" />
-            <ProgressBar fx:id="progressBar" layoutX="365.0" layoutY="23.0" prefWidth="200.0" progress="1.0" />
+            <Button fx:id="halfHalfJoker" layoutX="20.0" layoutY="97.0" mnemonicParsing="false"
+                    onAction="#removeHalfAnswers" prefHeight="50.0" prefWidth="50.0" text="50/50"
+                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"/>
+            <Button fx:id="passJoker" layoutX="90.0" layoutY="97.0" mnemonicParsing="false" onAction="#passQuestion"
+                    prefHeight="50.0" prefWidth="50.0"
+                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
+                    text="Pass"/>
+            <ProgressBar fx:id="progressBar" layoutX="365.0" layoutY="23.0" prefWidth="200.0" progress="1.0"/>
             <AnchorPane fx:id="allLifes" layoutX="27.0" layoutY="32.0" prefHeight="43.0" prefWidth="175.0">
                 <children>
-                    <Circle fx:id="life1" fill="#42b916" layoutX="27.0" layoutY="22.0" radius="13.0" stroke="WHITE" strokeType="INSIDE" />
-                    <Circle fx:id="life2" fill="#42b916" layoutX="87.0" layoutY="22.0" radius="13.0" stroke="WHITE" strokeType="INSIDE" />
-                    <Circle fx:id="life3" fill="#42b916" layoutX="146.0" layoutY="22.0" radius="13.0" stroke="WHITE" strokeType="INSIDE" />
+                    <Circle fx:id="life1" fill="#42b916" layoutX="27.0" layoutY="22.0" radius="13.0" stroke="WHITE"
+                            strokeType="INSIDE"/>
+                    <Circle fx:id="life2" fill="#42b916" layoutX="87.0" layoutY="22.0" radius="13.0" stroke="WHITE"
+                            strokeType="INSIDE"/>
+                    <Circle fx:id="life3" fill="#42b916" layoutX="146.0" layoutY="22.0" radius="13.0" stroke="WHITE"
+                            strokeType="INSIDE"/>
                 </children>
             </AnchorPane>
         </children>
     </AnchorPane>
     <AnchorPane fx:id="finishedScreen" prefHeight="400.0" prefWidth="600.0" visible="false">
         <children>
-            <Label fx:id="infoLabel" alignment="CENTER" layoutX="167.0" layoutY="127.0" prefHeight="67.0" prefWidth="273.0" style="-fx-background-color: white;">
+            <Label fx:id="infoLabel" alignment="CENTER" layoutX="167.0" layoutY="127.0" prefHeight="67.0"
+                   prefWidth="273.0" style="-fx-background-color: white;">
                 <font>
-                    <Font size="50.0" />
+                    <Font size="50.0"/>
                 </font>
             </Label>
-            <Button fx:id="returnButton" layoutX="239.0" layoutY="254.0" mnemonicParsing="false" onAction="#returnToFrontMenu" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;" text="Return to Main Menu" />
+            <Button fx:id="returnButton" layoutX="239.0" layoutY="254.0" mnemonicParsing="false"
+                    onAction="#returnToFrontMenu"
+                    style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: lightgrey;"
+                    text="Return to Main Menu"/>
         </children>
     </AnchorPane>
 </AnchorPane>
