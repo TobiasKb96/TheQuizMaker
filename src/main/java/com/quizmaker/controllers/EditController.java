@@ -1,4 +1,4 @@
 package com.quizmaker.controllers;
 
-public class EditTopicController {
+public class EditController {
 }

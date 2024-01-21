@@ -89,7 +89,7 @@ public class GameController implements Initializable {
     }
 
     public void returnToFrontMenu(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/frontMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/menuScreen.fxml"));
         Parent parent = null;
         try {
             parent = loader.load();
@@ -106,8 +106,6 @@ public class GameController implements Initializable {
         stage.setScene(scene);
     }
 }
-
-
         /*
 
         @FXML
