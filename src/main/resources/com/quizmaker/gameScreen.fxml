@@ -43,7 +43,7 @@
     </AnchorPane>
     <AnchorPane fx:id="finishedScreen" prefHeight="400.0" prefWidth="600.0" visible="false">
         <children>
-            <Label fx:id="infoLabel" alignment="CENTER" layoutX="169.0" layoutY="20.0" prefHeight="67.0" prefWidth="273.0" style="-fx-background-color: default;">
+            <Label fx:id="infoLabel" alignment="CENTER" layoutX="169.0" layoutY="20.0" prefHeight="67.0" prefWidth="273.0" style="-fx-background-color: TRANSPARENT;">
                 <font>
                     <Font size="50.0" />
                 </font>
