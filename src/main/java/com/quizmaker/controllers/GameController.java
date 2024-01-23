@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import java.net.URL;
@@ -75,7 +74,7 @@ public class GameController implements Initializable {
             for (int i = 1; i <= 4; i++) {
                 if (incorrectAnswers.contains(i)) {
                     // Grey out the incorrect answers
-                    greyOutAnswer(i);
+                    disableAnswer(i);
                     }
             }
             // Mark the 50/50 Joker as used
@@ -89,7 +88,7 @@ public class GameController implements Initializable {
         passJoker.setDisable(true);
     }
 
-    public void greyOutAnswer(int answerIndex) {
+    public void disableAnswer(int answerIndex) {
         switch (answerIndex) {
             case 1:
                 A1.setDisable(true);
@@ -109,25 +108,50 @@ public class GameController implements Initializable {
         }
     }
 
+    public void greenAnswer(int answerIndex) {
+        switch (answerIndex) {
+            case 1:
+                A1.setStyle("-fx-background-color: #8bf66d");
+                break;
+            case 2:
+                A2.setStyle("-fx-background-color: #8bf66d");
+                break;
+            case 3:
+                A3.setStyle("-fx-background-color: #8bf66d");
+                break;
+            case 4:
+                A4.setStyle("-fx-background-color: #8bf66d");
+                break;
+            default:
+                break;
+        }
+    }
+
     public void clickAnswer(ActionEvent actionEvent) {
-        String buttonID = ((Button) actionEvent.getSource()).getId();
-        checkAnswer(buttonID);
+        Button clickedButton = ((Button) actionEvent.getSource());
+        checkAnswer(clickedButton);
     }
 
     private void loadQuestion() {
+
         A1.setDisable(false);
         A2.setDisable(false);
         A3.setDisable(false);
         A4.setDisable(false);
+
         question.setText(questions.get(currentIndex).getQuestion());
+
         A1.setText(questions.get(currentIndex).getA1());
         A2.setText(questions.get(currentIndex).getA2());
         A3.setText(questions.get(currentIndex).getA3());
         A4.setText(questions.get(currentIndex).getA4());
+
+        //
     }
 
-    private void checkAnswer(String buttonID) {
-        if (buttonID.contains(String.valueOf(questions.get(currentIndex).getCorrectAnswer()))) {
+    private void checkAnswer(Button button) {
+        //
+        if (button.getId().contains(String.valueOf(questions.get(currentIndex).getCorrectAnswer()))) {
             score += currentIndex+1;
             scoreLabel.setText("Score: " + score);
             currentIndex++;
@@ -139,9 +163,11 @@ public class GameController implements Initializable {
 
             } else loadQuestion();
         } else {
+            button.setStyle("-fx-background-color: #f66d6d");
+            greenAnswer(questions.get(currentIndex).getCorrectAnswer());
             System.out.println("False");
             infoLabel.setText("You Lost!");
-            gameBoard.setVisible(false);
+            gameBoard.setDisable(true);
             finishedScreen.setVisible(true);
         }
     }
