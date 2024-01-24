@@ -59,43 +59,43 @@ public class GameController implements Initializable {
     }
 
     public void removeHalfAnswers(ActionEvent actionEvent) {
-            // Identify the incorrect answers
-            List<Integer> incorrectAnswers = new ArrayList<>();
+        // Identify the incorrect answers
+        List<Integer> incorrectAnswers = new ArrayList<>();
 
-            // Loop through the possible answer choices (1 to 4).
-            // Exclude the correct answer from the list of incorrect answers.
-            for (int i = 1; i <= 4; i++) {
-                if (i != questions.get(currentIndex).getCorrectAnswer()) {
-                    incorrectAnswers.add(i);
-                }
+        // Loop through the possible answer choices (1 to 4).
+        // Exclude the correct answer from the list of incorrect answers.
+        for (int i = 1; i <= 4; i++) {
+            if (i != questions.get(currentIndex).getCorrectAnswer()) {
+                incorrectAnswers.add(i);
             }
-
-            // Shuffle the list of incorrect answers to randomize
-            // Select two incorrect answers to grey out
-            Collections.shuffle(incorrectAnswers);
-            incorrectAnswers = incorrectAnswers.subList(0, 2);
-
-            // Display the results to the user
-            System.out.println("50/50 Joker used: Two incorrect answers are now greyed out.");
-
-            // Display each answer choice (1 to 4):
-            // If the answer choice is in the list of incorrect answers, mark it as greyed out.
-            // Otherwise, display the correct and remaining incorrect answers normally.
-            for (int i = 1; i <= 4; i++) {
-                if (incorrectAnswers.contains(i)) {
-                    // Grey out the incorrect answers
-                    greyOutAnswer(i);
-                    }
-            }
-            // Mark the 50/50 Joker as used
-            halfHalfJoker.setDisable(true);
         }
+
+        // Shuffle the list of incorrect answers to randomize
+        // Select two incorrect answers to grey out
+        Collections.shuffle(incorrectAnswers);
+        incorrectAnswers = incorrectAnswers.subList(0, 2);
+
+        // Display the results to the user
+        System.out.println("50/50 Joker used: Two incorrect answers are now greyed out.");
+
+        // Display each answer choice (1 to 4):
+        // If the answer choice is in the list of incorrect answers, mark it as greyed out.
+        // Otherwise, display the correct and remaining incorrect answers normally.
+        for (int i = 1; i <= 4; i++) {
+            if (incorrectAnswers.contains(i)) {
+                // Grey out the incorrect answers
+                greyOutAnswer(i);
+            }
+        }
+        // Mark the 50/50 Joker as used
+        halfHalfJoker.setDisable(true);
+    }
 
 
     //Method for Pass Question Joker
     public void passQuestion(ActionEvent actionEvent) {
         //Increases the current Question Index by 1
-        currentIndex ++;
+        currentIndex++;
 
         //Calls the loadQuestion method
         loadQuestion();
@@ -103,6 +103,7 @@ public class GameController implements Initializable {
         //Disables the Joker button
         passJoker.setDisable(true);
     }
+
     //greyOutAnswer method helpful for the 50/50 jokers
     //if called on the incorrect answers, the button gets disabled
     public void greyOutAnswer(int answerIndex) {
@@ -193,54 +194,3 @@ public class GameController implements Initializable {
         screenhandler.switchScreen(actionEvent, "menuScreen");
     }
 }
-        /*
-
-        @FXML
-        private Button A1;
-
-        @FXML
-        private Button A2;
-
-        @FXML
-        private Button A3;
-
-        @FXML
-        private Button A4;
-
-        // Initialize a list to store the answer buttons
-        private List<Button> answerButtons;
-
-        @FXML
-        private void initialize() {
-            // Initialize the answerButtons list
-            answerButtons = new ArrayList<>(List.of(A1, A2, A3, A4));
-        }
-
-        @FXML
-        private void handleAnswerClick(ActionEvent event) {
-            // Handle the click event for the answer buttons
-            Button clickedButton = (Button) event.getSource();
-
-            // Change the color of the clicked button to blue
-            clickedButton.setStyle("-fx-background-color: blue;");
-        }
-
-        @FXML
-        private void removeHalfAnswers(ActionEvent event) {
-            // Randomly select two buttons to be greyed out
-            Collections.shuffle(answerButtons, new Random());
-
-            // Grey out the first two buttons in the shuffled list
-            for (int i = 0; i < 2; i++) {
-                answerButtons.get(i).setDisable(true);
-                answerButtons.get(i).setStyle("-fx-background-color: grey;");
-            }
-        }
-
-        @FXML
-        private void handlePassQuestion(ActionEvent event) {
-            // Logic for passing the question
-            System.out.println("Question passed");
-            // Add your code for handling the question pass event
-        }
-         */

@@ -30,8 +30,6 @@ public class MenuController {
     public void switchToChooseTopic(ActionEvent actionEvent){
         ScreenHandler screenHandler = new ScreenHandler();
         screenHandler.switchScreen(actionEvent, "chooseTopicScreen");
-
-
     }
 }
 
