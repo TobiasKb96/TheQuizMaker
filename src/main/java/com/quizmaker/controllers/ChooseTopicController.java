@@ -31,14 +31,21 @@ public class ChooseTopicController implements Initializable {
 
     DataSingelton data =  DataSingelton.getInstance();
 
+    //Method for Initializing the controller
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         setupOverviewMode(data.getData());
+
         //Source https://www.youtube.com/watch?v=Pqfd4hoi5cc
+        //Adds all Json File Names to the topic List
         topicList.getItems().addAll(JsonRWC.getFileNames());
+
+        //Adds a change listener to the selected item property of topicList.
+        // It listens for changes in the selected item and takes action accordingly.
         topicList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
+            //changed method gets triggered when selected items in topiclist changes
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 
                 selectedTopic = topicList.getSelectionModel().getSelectedItem();
@@ -50,13 +57,19 @@ public class ChooseTopicController implements Initializable {
         });
     }
 
+    //toEditScreen method creates a new instance of ScreenHandler and calls
+    //the switchScreen method using the id of the Java fx file
     public void toEditScreen(ActionEvent actionEvent) {
         ScreenHandler screenHandler = new ScreenHandler();
         screenHandler.switchScreen(actionEvent, "editScreen");
     }
-
+    //The deleteTopic method deleted a topic by using the deleteFile method
+    //with selectedTopic as parameter
     public void deleteTopic(ActionEvent actionEvent) {
         JsonRWC.deleteFile(selectedTopic);
+        //Deleting from the UI: First it gets the topic with Getter Method
+        //Removes the currently selected item from the list. The selected item
+        // is obtained using topicList.getSelectionModel().getSelectedItem
         topicList.getItems().remove(topicList.getSelectionModel().getSelectedItem());
     }
 
@@ -69,7 +82,7 @@ public class ChooseTopicController implements Initializable {
         ScreenHandler screenHandler = new ScreenHandler();
         screenHandler.switchScreen(actionEvent, "gameScreen");
     }
-
+    //The setupOverviewMethod adjusts the UI based on pressed button
     private void setupOverviewMode(String overviewMode){
         if(overviewMode.equals("Play")){
             topicOverviewLabel.setText("Choose a topic to play!");

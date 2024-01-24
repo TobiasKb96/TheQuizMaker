@@ -35,6 +35,8 @@ public class EditController implements Initializable {
 
     DataSingelton data = DataSingelton.getInstance();
 
+    //Method initialize is overridden and used to decide whether a New Topic is created
+    //or it loads from the list, based on user input
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -56,14 +58,18 @@ public class EditController implements Initializable {
     }
 
     public void showNextQuestion(ActionEvent actionEvent) {
+
         saveTopicState();
         if(currentIndex < topic.questions.size()-1) currentIndex++;
         loadCurrentQuestion();
     }
 
     public void showPreviousQuestion(ActionEvent actionEvent) {
+        //saveTopicState method to save current question state or responses
         saveTopicState();
+        //Conditional checks if there is a previous question
         if (currentIndex > 0) {
+            //If yes, it decrements the currentIndex by 1 and loads Question
             currentIndex--;
             loadCurrentQuestion();
         }
@@ -71,9 +77,12 @@ public class EditController implements Initializable {
 
     public void saveTopicToFile(ActionEvent actionEvent) {
         saveTopicState();
+        //Writes the topic data to a file in the JsonRWC class
         JsonRWC.toFile(topic);
+        //Creates a new Object of Instance ScreenHandler
         ScreenHandler screenHandler = new ScreenHandler();
         data.setData("Edit");
+        //Switches to the chooseTopicScreen
         screenHandler.switchScreen(actionEvent, "chooseTopicScreen");
     }
 
@@ -81,6 +90,8 @@ public class EditController implements Initializable {
 
     }
 
+    //Extracts info from UI input fields, updates the state of the current topic
+    //and updates the currentIndex Q with extracted info
     public void saveTopicState() {
         String question = inputQuestion.getText();
         String a1 = inputA1.getText();
@@ -94,10 +105,15 @@ public class EditController implements Initializable {
         int correctAnswer = Integer.parseInt(correctAnswerString);
 
         Question questionToSave = new Question(question, a1, a2, a3, a4,correctAnswer);
+        //updates the topic with the new Question object at the current index
         topic.setQuestion(currentIndex, questionToSave);
     }
 
+    //loadCurrentQuestion method populates UI elements with information
+    // related to the current question within a topic.
     public void loadCurrentQuestion() {
+        //Retrieves the correct answer index from the current question in the topic
+        //and selects the corresponding ToggleButton in the correctToggleGroup
         correctToggleGroup.getToggles().get(topic.getQuestions().get(currentIndex).getCorrectAnswer()-1).setSelected(true);
         inputA1.setText(topic.getQuestions().get(currentIndex).getA1());
         inputA2.setText(topic.getQuestions().get(currentIndex).getA2());

@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import java.net.URL;
@@ -42,9 +43,17 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        //Reads a topic Object from the File
         Topic gameTopic = JsonRWC.fromFile(data.getData());
+
+        //Retrieves the list of Questions from gameTopic
         questions = gameTopic.getQuestions();
+
+        //Shuffles them
         Collections.shuffle(questions);
+
+        //Calls the loadQuestion method
         loadQuestion();
     }
 
@@ -82,9 +91,12 @@ public class GameController implements Initializable {
         }
 
 
+    //Method for Pass Question Joker
     public void passQuestion(ActionEvent actionEvent) {
         currentIndex ++;
         loadQuestion();
+
+        //Disables the Joker button
         passJoker.setDisable(true);
     }
 
@@ -132,15 +144,20 @@ public class GameController implements Initializable {
         checkAnswer(clickedButton);
     }
 
+    //Updates the UI with info related to the current Question
     private void loadQuestion() {
 
+        //Enables all Answer buttons when new Question gets loaded to avoid bugs from Jokers
         A1.setDisable(false);
         A2.setDisable(false);
         A3.setDisable(false);
         A4.setDisable(false);
 
+
+        //Updates the UI Question Element with the text of the current Q
         question.setText(questions.get(currentIndex).getQuestion());
 
+        //Sets the correct Answers Text
         A1.setText(questions.get(currentIndex).getA1());
         A2.setText(questions.get(currentIndex).getA2());
         A3.setText(questions.get(currentIndex).getA3());
@@ -156,16 +173,24 @@ public class GameController implements Initializable {
             scoreLabel.setText("Score: " + score);
             currentIndex++;
             //TODO: change correct animation
+
             if (currentIndex > questions.size() - 1) {
+                //If all Questions have been answered, prints Winning message
                 infoLabel.setText("You Won!");
+                //The gameBoard is disabled
                 gameBoard.setVisible(false);
+                //And the finishedScreen is enabled
                 finishedScreen.setVisible(true);
 
+                //If not all Q have been answered, calls the loadQuestion method
             } else loadQuestion();
+
+            //If the ID of the clicked button is not correct
         } else {
             button.setStyle("-fx-background-color: #f66d6d");
             greenAnswer(questions.get(currentIndex).getCorrectAnswer());
             System.out.println("False");
+            //Print Losing Message
             infoLabel.setText("You Lost!");
             gameBoard.setDisable(true);
             finishedScreen.setVisible(true);
@@ -173,58 +198,10 @@ public class GameController implements Initializable {
     }
 
     public void returnToFrontMenu(ActionEvent actionEvent) {
+        //A new Screenhandler instance gets created
         ScreenHandler screenhandler = new ScreenHandler();
+
+        //That directs to the menuScreen fxml file
         screenhandler.switchScreen(actionEvent, "menuScreen");
     }
 }
-        /*
-
-        @FXML
-        private Button A1;
-
-        @FXML
-        private Button A2;
-
-        @FXML
-        private Button A3;
-
-        @FXML
-        private Button A4;
-
-        // Initialize a list to store the answer buttons
-        private List<Button> answerButtons;
-
-        @FXML
-        private void initialize() {
-            // Initialize the answerButtons list
-            answerButtons = new ArrayList<>(List.of(A1, A2, A3, A4));
-        }
-
-        @FXML
-        private void handleAnswerClick(ActionEvent event) {
-            // Handle the click event for the answer buttons
-            Button clickedButton = (Button) event.getSource();
-
-            // Change the color of the clicked button to blue
-            clickedButton.setStyle("-fx-background-color: blue;");
-        }
-
-        @FXML
-        private void removeHalfAnswers(ActionEvent event) {
-            // Randomly select two buttons to be greyed out
-            Collections.shuffle(answerButtons, new Random());
-
-            // Grey out the first two buttons in the shuffled list
-            for (int i = 0; i < 2; i++) {
-                answerButtons.get(i).setDisable(true);
-                answerButtons.get(i).setStyle("-fx-background-color: grey;");
-            }
-        }
-
-        @FXML
-        private void handlePassQuestion(ActionEvent event) {
-            // Logic for passing the question
-            System.out.println("Question passed");
-            // Add your code for handling the question pass event
-        }
-         */
