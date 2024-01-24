@@ -1,0 +1,47 @@
+Button {
+    -fx-cursor: hand;
+}
+
+.heart-button{
+        -fx-background-color: red;
+    -fx-shape: "M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+            c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z";
+            -fx-cursor: default;
+}
+
+.custom-button {
+-fx-font-family: "Lucida Console";
+    -fx-background-radius: 27;
+    -fx-pref-width: 54;
+    -fx-pref-height: 54;
+    -fx-background-color: #2596be;
+}
+
+.option-button {
+    -fx-font-family: "Lucida Console";
+    -fx-background-color: white;
+        -fx-text-fill: #008CBA;
+        -fx-border-width: 5px;
+        -fx-border-color: #2596be;
+}
+
+.option-button:hover {
+    -fx-background-color: #008CBA;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.question-label {
+    -fx-alignment: center;
+    -fx-margin: 20px;
+    -fx-border-color: #000000;
+    -fx-border-width: 3px;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold
+}
+
+GridPane {
+     -fx-background-color: #008CBA;
+     -fx-border-color: #000000;
+     -fx-border-width: 5px;
+}

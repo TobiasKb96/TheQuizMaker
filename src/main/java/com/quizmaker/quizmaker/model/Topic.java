@@ -1,4 +1,7 @@
-package com.quizmaker.quizmaker;
+package com.quizmaker.quizmaker.model;
+
+import com.quizmaker.quizmaker.JsonRWC;
+import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +9,9 @@ import java.util.Scanner;
 
 public class Topic {
         public String name;
-        public List<Question> questions;
+        public List<QuestionOK> questions;
 
-    public Topic(String name, List<Question> questions) {
+    public Topic(String name, List<QuestionOK> questions) {
         this.name = name;
         this.questions = questions;
     }
@@ -27,7 +30,7 @@ public class Topic {
         this.questions = new ArrayList<>();
     }
 
-    public void addQuestion(Question question) { //add question to List of questions
+    public void addQuestion(QuestionOK question) { //add question to List of questions
         this.questions.add(question);
     }
     public void removeQuestion(int pos) {
@@ -37,7 +40,7 @@ public class Topic {
     public String getName() { //get name of Topic
         return this.name;
     }
-    public List<Question> getQuestions() { //get List of Questions in Topic
+    public List<QuestionOK> getQuestions() { //get List of Questions in Topic
         return questions;
     }
     public int getNumberOfQuestions(){
@@ -46,7 +49,7 @@ public class Topic {
 
     public void modifyTopicScreen() {
         Scanner scanner = new Scanner(System.in);
-        List<Question> questions = this.getQuestions();
+        List<QuestionOK> questions = this.getQuestions();
 
         while (true) {
             System.out.println();
@@ -73,12 +76,12 @@ public class Topic {
             }
             //adds Question
             else if (modifyChoice == 1) {
-                questions.add(Question.newQuestionScreen());
+                questions.add(QuestionOK.newQuestionScreen());
             }
 
             //Edit a Question
             else if (modifyChoice > 1 && modifyChoice <= questions.size()+1) {
-                Question modifiedQuestion = questions.get(modifyChoice - 2);
+                QuestionOK modifiedQuestion = questions.get(modifyChoice - 2);
                 System.out.println();
                 System.out.println("Editing question:");
                 System.out.println("Question: " + modifiedQuestion.getQuestion());
@@ -158,37 +161,21 @@ public class Topic {
     }
 
     //User creates a new Topic and adds questions
-    public static void newTopicScreen() {
-        List<Question> questions = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose Topic Name:");
-        String topicName = scanner.nextLine();
-        int input = 0;
-        while (true) {
-            System.out.println("1: Add question");
-            System.out.println("0: Return");
+    public void newTopicScreen(String topicName, TextField questionTextField1, TextField questionTextField2,TextField questionTextField3) {
+        List<QuestionOK> questions = new ArrayList<>();
+        String question1 = questionTextField1.getText();
+                String question2 = questionTextField2.getText();
+                String question3 = questionTextField3.getText();
 
-            input = scanner.nextInt();
-            scanner.nextLine();
-
-            //adds a new Question
-            if (input == 1) {
-                questions.add(Question.newQuestionScreen());
-                System.out.println("Question added successfully!");
-            }
-
-            //returns and creates Topic
-            else if (input == 0) {
+                QuestionOK newQuestion1 = new QuestionOK(question1);
+                QuestionOK newQuestion2 = new QuestionOK(question2);
+                QuestionOK newQuestion3 = new QuestionOK(question3);
+                questions.add(newQuestion1);
+                questions.add(newQuestion2);
+                questions.add(newQuestion3);
 
                 Topic newTopic = new Topic(topicName, questions);
                 JsonRWC.toFile(newTopic);
                 System.out.println("Topic created successfully!");
-                break;
-            }
-            //invalid Input
-            else {
-                System.out.println("Invalid Input. Please try again.");
-            }
         }
     }
-}

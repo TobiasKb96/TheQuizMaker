@@ -5,15 +5,15 @@
     "a2":"Cp",
     "a3":"Yt",
     "a4":"Tm",
-    "correctAnswer":4
+    "correctAnswer":"Tm"
   },
   {
-    "question":"What is the 5th prime numbe?",
+    "question":"What is the 5th prime number?",
     "a1":"5",
     "a2":"7",
     "a3":"11",
     "a4":"13",
-    "correctAnswer":3
+    "correctAnswer":"11"
   },
   {
     "question":"In what modern-day country was Marie Curie born?",
@@ -21,7 +21,7 @@
     "a2":"Czech Republic",
     "a3":"France",
     "a4":"Germany",
-    "correctAnswer":1
+    "correctAnswer":"Poland"
   },
   {
     "question":"What is the study of mushrooms called?",
@@ -29,7 +29,7 @@
     "a2":"Mycology",
     "a3":"Fungology",
     "a4":"Cytology",
-    "correctAnswer":2
+    "correctAnswer":"Mycology"
   },
   {
     "question":"Which of the following is not present in the human stomach?",
@@ -37,7 +37,7 @@
     "a2":"Mucus",
     "a3":"Trypsin",
     "a4":"Hydrochloric acid",
-    "correctAnswer":3
+    "correctAnswer":"Trypsin"
   },
   {
     "question":"What is the color of S02 gas?",
@@ -45,15 +45,15 @@
     "a2":"Grey",
     "a3":"Brown",
     "a4":"Colorless",
-    "correctAnswer":4
+    "correctAnswer":"Colorless"
   },
   {
-    "question":"Newtown's 2nd laf of motion: Change in momentum per unit time is equal to ___?",
+    "question":"Newton's 2nd law of motion: Change in momentum per unit time is equal to ___?",
     "a1":"Force",
     "a2":"Energy",
     "a3":"Work",
     "a4":"Acceleration",
-    "correctAnswer":1
+    "correctAnswer":"Force"
   },
   {
     "question":"What is the chemical formula of glucose?",
@@ -61,7 +61,7 @@
     "a2":"C6H12O6",
     "a3":"C6H1406",
     "a4":"C12H24O12",
-    "correctAnswer":2
+    "correctAnswer":"C6H12O6"
   },
   {
     "question":"What was the original name for the planet Uranus?",
@@ -69,7 +69,7 @@
     "a2":"Henry",
     "a3":"Gerlad",
     "a4":"William",
-    "correctAnswer":1
+    "correctAnswer":"George"
   },
   {
     "question":"What are you afraid of when you have anatidaephobia?",
@@ -77,7 +77,7 @@
     "a2":"A dog watching you",
     "a3":"A baby biting you",
     "a4":"A car running over you",
-    "correctAnswer":1
+    "correctAnswer":"A duck attacking you"
   },
   {
     "question":"A hexagonal shaped storm can be found on what planet?",
@@ -85,7 +85,7 @@
     "a2":"Venus",
     "a3":"Saturn",
     "a4":"Mercury",
-    "correctAnswer":3
+    "correctAnswer":"Saturn"
   },
   {
     "question":"What blood vessels carry oxygenated blood from the heart to other parts?",
@@ -93,7 +93,7 @@
     "a2":"Arteries",
     "a3":"Both",
     "a4":"None of these",
-    "correctAnswer":2
+    "correctAnswer":"Arteries"
   },
   {
     "question":"What is the strongest muscle in the human body?",
@@ -101,7 +101,7 @@
     "a2":"Masseter",
     "a3":"Gluteus maximus",
     "a4":"Triceps",
-    "correctAnswer":2
+    "correctAnswer":"Masseter"
   },
   {
     "question":"Which gas makes up the majority of Earth's atmosphere",
@@ -109,7 +109,7 @@
     "a2":"Carbon Dioxide",
     "a3":"Hydrogen",
     "a4":"Nitrogen",
-    "correctAnswer":4
+    "correctAnswer":"Nitrogen"
   },
   {
     "question":"How many bones are in the adult human body",
@@ -117,6 +117,6 @@
     "a2":"302",
     "a3":"160",
     "a4":"128",
-    "correctAnswer":1
+    "correctAnswer":"206"
   }
 ]

@@ -1,19 +1,22 @@
-package com.quizmaker.quizmaker;
+package com.quizmaker.quizmaker.model;
 
 import java.util.Scanner;
 
-public class Question {
+public class QuestionOK {
 
-    public String question, a1, a2, a3, a4;
-    public int correctAnswer;
+    public String question, a1, a2, a3, a4, correctAnswer;
 
-    public Question(String question, String a1, String a2, String a3, String a4, int correctAnswer) {
+    public QuestionOK(String question, String a1, String a2, String a3, String a4, String correctAnswer) {
         this.question = question;
         this.a1 = a1;
         this.a2 = a2;
         this.a3 = a3;
         this.a4 = a4;
         this.correctAnswer = correctAnswer;
+    }
+
+    public QuestionOK(String question){
+        this.question = question;
     }
 
     public String getQuestion() {
@@ -56,16 +59,21 @@ public class Question {
         this.a4 = a4;
     }
 
-    public void setCorrectAnswer(int correctAnswer) {
+    public void setCorrectAnswer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
     }
 
-    public int getCorrectAnswer() {
+    public String getCorrectAnswer() {
         return this.correctAnswer;
     }
 
+    @Override
+    public String toString(){
+        return question +"\n" + a1 + "\n " + a2 + "\n" + a3 + "\n" + a4;
+    }
+
     //guides user through question creation
-    public static Question newQuestionScreen(){
+    public static QuestionOK newQuestionScreen(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the question:");
         String questionText = scanner.nextLine();
@@ -85,10 +93,10 @@ public class Question {
         System.out.println("4. " + a4);
 
         System.out.println("Enter the correct answer (1, 2, 3, or 4):");
-        int correctAnswer = scanner.nextInt();
+        String correctAnswer = scanner.nextLine();
         scanner.nextLine();
 
-        return new Question(questionText, a1, a2, a3, a4, correctAnswer);
+        return new QuestionOK(questionText, a1, a2, a3, a4, correctAnswer);
     }
 
     public void editQuestionScreen() {
@@ -134,7 +142,7 @@ public class Question {
                 case 3:
                     // Edit correct answer
                     System.out.println("Enter the new correct answer (1, 2, 3, or 4):");
-                    this.setCorrectAnswer(scanner.nextInt());
+                    this.setCorrectAnswer(scanner.nextLine());
                     System.out.println("Correct answer edited successfully!");
                     break;
                 default:

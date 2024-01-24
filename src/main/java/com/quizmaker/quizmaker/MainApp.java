@@ -1,5 +1,7 @@
 package com.quizmaker.quizmaker;
 
+import com.quizmaker.quizmaker.model.QuestionOK;
+import com.quizmaker.quizmaker.model.Topic;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,22 +17,27 @@ import java.util.*;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("game-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.show();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("start-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
 
     }
 
-    public static void playGame(String topicName){
+/*    public static void playGame(String topicName){
         Scanner scanner = new Scanner(System.in);
         int input = 0;
         int score = 0;
         Topic gameTopic = JsonRWC.fromFile(topicName);
-        List<Question> questions = gameTopic.getQuestions();
+        List<QuestionOK> questions = gameTopic.getQuestions();
         int index = 1;
         Collections.shuffle(questions);
-        for(Question currentQuestion: questions) {
+        for(QuestionOK currentQuestion: questions) {
             System.out.println("Question " + (index) + ": " + currentQuestion.getQuestion());
             System.out.println("1. " + currentQuestion.getA1());
             System.out.println("2. " + currentQuestion.getA2());
@@ -114,12 +121,12 @@ public class MainApp extends Application {
         }
 
 
-    }
+    }*/
 
 
 
     public static void main(String[] args) {
-        gameLoop();
+       // gameLoop();
         /*
         Question testQuestion1 = new Question("Was ist 3", "4", "3", "2", "1", 4);
         Question testQuestion2 = new Question("Was ist 2", "4", "3", "2", "1", 3);
@@ -139,7 +146,7 @@ public class MainApp extends Application {
         System.out.println("test");
 
 
-       // launch();
+       launch();
 
     }
 }

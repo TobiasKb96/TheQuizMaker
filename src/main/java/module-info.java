@@ -11,6 +11,10 @@ module com.quizmaker.quizmaker {
     //requires eu.hansolo.tilesfx;
     //requires com.almasb.fxgl.all;
 
-    opens com.quizmaker.quizmaker to javafx.fxml;
+    opens com.quizmaker.quizmaker to javafx.fxml, com.google.gson;
     exports com.quizmaker.quizmaker;
+    exports com.quizmaker.quizmaker.model;
+    opens com.quizmaker.quizmaker.model to com.google.gson, javafx.fxml;
+    exports com.quizmaker.quizmaker.controller;
+    opens com.quizmaker.quizmaker.controller to com.google.gson, javafx.fxml;
 }

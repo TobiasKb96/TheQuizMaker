@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="600.0" style="-fx-background-color: #00008B;" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.quizmaker.controller.StartGameController">
+   <children>
+      <Text fill="#008cba" layoutX="158.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quiz Maker">
+         <font>
+            <Font name="Lucida Console" size="49.0" />
+         </font>
+      </Text>
+      <Button fx:id="newGameBtn" layoutX="216.0" layoutY="113.0" mnemonicParsing="false" onAction="#newGame" prefHeight="71.0" prefWidth="168.0" text="New Game">
+         <font>
+            <Font name="Lucida Console" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="highScoresBtn" layoutX="216.0" layoutY="204.0" mnemonicParsing="false" onAction="#highScores" prefHeight="71.0" prefWidth="168.0" text="HighScores">
+         <font>
+            <Font name="Lucida Console" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="optionsBtn" layoutX="216.0" layoutY="291.0" mnemonicParsing="false" onAction="#options" prefHeight="71.0" prefWidth="168.0" text="Options">
+         <font>
+            <Font name="Lucida Console" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="newCategoryBtn" layoutX="216.0" layoutY="378.0" mnemonicParsing="false" onAction="#newCategory" prefHeight="71.0" prefWidth="168.0" text="New Category">
+         <font>
+            <Font name="Lucida Console" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitBtn" layoutX="216.0" layoutY="464.0" mnemonicParsing="false" onAction="#closeApplication" prefHeight="71.0" prefWidth="168.0" text="Exit">
+         <font>
+            <Font name="Lucida Console" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

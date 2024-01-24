@@ -2,6 +2,9 @@ package com.quizmaker.quizmaker;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.quizmaker.quizmaker.model.HighScore;
+import com.quizmaker.quizmaker.model.QuestionOK;
+import com.quizmaker.quizmaker.model.Topic;
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -13,7 +16,7 @@ public class JsonRWC {  //Jason Read/Write/Check
     //saves a Topic to a .json file (overwrites existing files)
     public static void toFile(Topic topic) {
         String fileName = topic.getName() + ".json";
-        List<Question> questionsInTopic = topic.getQuestions();
+        List<QuestionOK> questionsInTopic = topic.getQuestions();
         File newFile = new File(fileName);
             try {
                 FileWriter fileWriter = new FileWriter(newFile);
@@ -27,6 +30,75 @@ public class JsonRWC {  //Jason Read/Write/Check
 
     }
 
+    public static void saveHighScore(String playerName, String score) {
+        String fileName = "HighScores.json";
+        List<HighScore> existingHighScores = readHighScores(fileName);
+
+        HighScore newHighScore = new HighScore(playerName, score);
+        existingHighScores.add(newHighScore);
+        try (Writer writer = new FileWriter(fileName)) {
+            Gson gson = new Gson();
+            gson.toJson(existingHighScores, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static List<HighScore> readHighScores(String fileName) {
+        List<HighScore> existingHighScores = new ArrayList<>();
+
+        try (Reader reader = new FileReader(fileName)) {
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<HighScore>>() {}.getType();
+            existingHighScores = gson.fromJson(reader, type);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return existingHighScores != null ? existingHighScores : new ArrayList<>();
+    }
+
+    // temporary score data
+    public static void saveScore(String score) {
+        String fileName = "Scores.json";
+        List<HighScore> existingScores = readScores(fileName);
+
+        HighScore newScore = new HighScore(score);
+        existingScores.add(newScore);
+
+        try (Writer writer = new FileWriter(fileName)) {
+            Gson gson = new Gson();
+            gson.toJson(existingScores, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static List<HighScore> readScores(String fileName) {
+        List<HighScore> existingScores = new ArrayList<>();
+        try (Reader reader = new FileReader(fileName)) {
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<HighScore>>() {}.getType();
+            existingScores = gson.fromJson(reader, type);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return existingScores != null ? existingScores : new ArrayList<>();
+    }
+
+    public static void clearScoresFile() {
+        String fileName = "Scores.json";
+
+        try {
+            File file = new File(fileName);
+            if (file.exists()) {
+                file.delete();
+                System.out.println("Scores file cleared successfully.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     //returns a Topic object from a saved .json file
     public static Topic fromFile(String fileName) {
 
@@ -35,8 +107,8 @@ public class JsonRWC {  //Jason Read/Write/Check
         try {
             FileReader fileReader = new FileReader(filePath);
             Gson gson = new Gson();
-            Type questionListType = new TypeToken<ArrayList<Question>>(){}.getType();
-            List<Question> questions = gson.fromJson(fileReader, questionListType);
+            Type questionListType = new TypeToken<ArrayList<QuestionOK>>(){}.getType();
+            List<QuestionOK> questions = gson.fromJson(fileReader, questionListType);
             fileReader.close();
             Topic topic = new Topic(fileName,questions);
             return topic;

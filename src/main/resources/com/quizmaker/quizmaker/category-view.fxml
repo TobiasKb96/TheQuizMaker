@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="561.0" prefWidth="600.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.quizmaker.quizmaker.controller.CategoryController">
+   <children>
+      <Text layoutX="187.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categories">
+         <font>
+            <Font name="Lucida Console" size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="41.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose at least 4:">
+         <font>
+            <Font name="Lucida Console" size="16.0" />
+         </font>
+      </Text>
+      <CheckBox alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="170.0" mnemonicParsing="false" text="Smarter Than a Fifth Grader">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutX="375.0" layoutY="170.0" mnemonicParsing="false" text="Java">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutX="24.0" layoutY="230.0" mnemonicParsing="false" text="Pop Culture">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutX="195.0" layoutY="230.0" mnemonicParsing="false" text="Finish The Vine">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutX="419.0" layoutY="230.0" mnemonicParsing="false" text="18+">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutX="24.0" layoutY="281.0" mnemonicParsing="false" text="Personal Category">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox alignment="CENTER" layoutX="258.0" layoutY="281.0" mnemonicParsing="false" text="Pers. Category">
+         <font>
+            <Font name="Lucida Console" size="18.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="backBtn" layoutX="41.0" layoutY="506.0" mnemonicParsing="false" onAction="#backToMenu" text="Back to Menu">
+         <font>
+            <Font name="Lucida Console" size="13.0" />
+         </font></Button>
+      <Button fx:id="doneBtn" layoutX="246.0" layoutY="370.0" mnemonicParsing="false" onAction="#changeToGameFrame" prefHeight="65.0" prefWidth="130.0" text="Done">
+         <font>
+            <Font name="Lucida Console" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
