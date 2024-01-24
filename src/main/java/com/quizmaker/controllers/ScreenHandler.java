@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ScreenHandler {
 
     //Method for switching between Screens
-    public void switchScreen(ActionEvent actionEvent, String fxmlFileName){
+    public void switchScreen(ActionEvent actionEvent, String fxmlFileName) {
         //Initializes and FXMLLoader instance, specifying the location
         //(the directory) and name parameter
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/quizmaker/" + fxmlFileName + ".fxml"));
@@ -28,5 +28,6 @@ public class ScreenHandler {
         Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
     }
+}
 
 

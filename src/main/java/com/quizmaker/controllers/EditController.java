@@ -127,12 +127,14 @@ public class EditController implements Initializable {
     public void removeCurrentQuestion(ActionEvent actionEvent) {
         topic.removeQuestion(currentIndex);
         if(currentIndex > 0) currentIndex --;
+        saveTopicState();
         loadCurrentQuestion();
     }
 
     public void addNewQuestion(ActionEvent actionEvent) {
         topic.addQuestion(new Question());
         currentIndex = topic.questions.size()-1;
+        saveTopicState();
         loadCurrentQuestion();
     }
 }
